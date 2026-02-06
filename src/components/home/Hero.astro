@@ -1,0 +1,162 @@
+---
+// Hero section with dynamical systems visualization
+---
+
+<section class="relative min-h-[600px] md:min-h-[700px] flex items-center overflow-hidden bg-gradient-primary">
+	<!-- Animated background -->
+	<div class="absolute inset-0">
+		<canvas id="dynamical-system" class="w-full h-full opacity-30"></canvas>
+	</div>
+	
+	<!-- Content -->
+	<div class="container mx-auto px-4 py-20 relative z-10">
+		<div class="max-w-4xl mx-auto text-center text-white">
+			<!-- Main title -->
+			<h1 
+				class="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 animate-fade-in"
+				style="animation-delay: 0.1s"
+			>
+				Explorando la
+				<span class="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-white via-unam-gold-300 to-white animate-gradient-shift" style="background-size: 200% 200%;">
+					Complejidad
+				</span>
+			</h1>
+			
+			<!-- Subtitle -->
+			<p 
+				class="text-xl md:text-2xl mb-8 text-white/90 animate-fade-in"
+				style="animation-delay: 0.3s"
+			>
+				Investigación de vanguardia en sistemas dinámicos no lineales
+			</p>
+			
+			<!-- Research areas badges -->
+			<div 
+				class="flex flex-wrap justify-center gap-3 mb-12 animate-fade-in"
+				style="animation-delay: 0.5s"
+			>
+				<a href="/investigacion/bioinformatica" class="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium border border-white/30 hover:bg-white/30 transition-colors">
+					Bioinformática
+				</a>
+				<a href="/investigacion/neuroinformatica" class="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium border border-white/30 hover:bg-white/30 transition-colors">
+					Neuroinformática
+				</a>
+				<a href="/investigacion/sistemas-dinamicos" class="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium border border-white/30 hover:bg-white/30 transition-colors">
+					Sistemas Dinámicos
+				</a>
+				<a href="/investigacion/data-science" class="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-sm font-medium border border-white/30 hover:bg-white/30 transition-colors">
+					Data Science
+				</a>
+			</div>
+			
+			<!-- CTAs -->
+			<div 
+				class="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in"
+				style="animation-delay: 0.7s"
+			>
+				<a 
+					href="/investigacion" 
+					class="px-8 py-4 bg-white text-unam-blue-500 font-bold rounded-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
+				>
+					Nuestra Investigación
+				</a>
+				<a 
+					href="/publicaciones" 
+					class="px-8 py-4 bg-unam-gold-500 text-white font-bold rounded-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
+				>
+					Publicaciones
+				</a>
+			</div>
+			
+			<!-- Scroll indicator -->
+			<div 
+				class="mt-16 animate-bounce"
+				style="animation-delay: 1s"
+			>
+				<svg class="w-6 h-6 mx-auto text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+				</svg>
+			</div>
+		</div>
+	</div>
+</section>
+
+<script>
+	// Lorenz attractor visualization
+	const canvas = document.getElementById('dynamical-system') as HTMLCanvasElement;
+	if (canvas) {
+		const ctx = canvas.getContext('2d');
+		if (ctx) {
+			// Set canvas size
+			const resizeCanvas = () => {
+				canvas.width = canvas.offsetWidth;
+				canvas.height = canvas.offsetHeight;
+			};
+			resizeCanvas();
+			window.addEventListener('resize', resizeCanvas);
+			
+			// Lorenz attractor parameters
+			const sigma = 10;
+			const rho = 28;
+			const beta = 8/3;
+			const dt = 0.01;
+			
+			let x = 0.1;
+			let y = 0;
+			let z = 0;
+			
+			const points: {x: number, y: number}[] = [];
+			const maxPoints = 1000;
+			
+			// Animation loop
+			const animate = () => {
+				// Calculate next point
+				const dx = sigma * (y - x) * dt;
+				const dy = (x * (rho - z) - y) * dt;
+				const dz = (x * y - beta * z) * dt;
+				
+				x += dx;
+				y += dy;
+				z += dz;
+				
+				// Project 3D to 2D
+				const scale = 8;
+				const centerX = canvas.width / 2;
+				const centerY = canvas.height / 2;
+				const px = centerX + x * scale;
+				const py = centerY + y * scale;
+				
+				points.push({x: px, y: py});
+				if (points.length > maxPoints) {
+					points.shift();
+				}
+				
+				// Clear canvas with fade effect
+				ctx.fillStyle = 'rgba(0, 61, 130, 0.05)';
+				ctx.fillRect(0, 0, canvas.width, canvas.height);
+				
+				// Draw path
+				if (points.length > 1) {
+					ctx.beginPath();
+					ctx.moveTo(points[0].x, points[0].y);
+					
+					for (let i = 1; i < points.length; i++) {
+						ctx.lineTo(points[i].x, points[i].y);
+						
+						// Gradient color based on position
+						const alpha = i / points.length;
+						ctx.strokeStyle = `rgba(0, 180, 216, ${alpha * 0.8})`;
+						ctx.lineWidth = 2;
+						ctx.stroke();
+						ctx.beginPath();
+						ctx.moveTo(points[i].x, points[i].y);
+					}
+				}
+				
+				requestAnimationFrame(animate);
+			};
+			
+			animate();
+		}
+	}
+</script>

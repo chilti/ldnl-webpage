@@ -1,0 +1,84 @@
+---
+// Componente de Newsletter
+---
+
+<section class="py-12 bg-gradient-to-br from-unam-blue-500 to-accent-cyan-500 dark:from-unam-blue-900 dark:to-accent-cyan-900">
+  <div class="container mx-auto px-4">
+    <div class="max-w-3xl mx-auto text-center">
+      <h3 class="text-2xl md:text-3xl font-display font-bold text-white mb-4">
+        Mantente Actualizado
+      </h3>
+      <p class="text-lg text-white/90 mb-8">
+        Recibe las últimas noticias sobre investigación, publicaciones y eventos del laboratorio
+      </p>
+
+      <!-- Formulario -->
+      <form
+        x-data="{
+          email: '',
+          status: '',
+          message: '',
+          async submit() {
+            if (!this.email) {
+              this.status = 'error';
+              this.message = 'Por favor ingresa tu email';
+              return;
+            }
+            
+            const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
+            if (!emailRegex.test(this.email)) {
+              this.status = 'error';
+              this.message = 'Por favor ingresa un email válido';
+              return;
+            }
+            
+            this.status = 'success';
+            this.message = '¡Gracias por suscribirte! Pronto recibirás nuestras actualizaciones.';
+            this.email = '';
+            
+            // Aquí se integrará con Mailchimp en el futuro
+          }
+        }"
+        @submit.prevent="submit()"
+        class="space-y-4"
+      >
+        <div class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
+          <input
+            type="email"
+            x-model="email"
+            placeholder="tu@email.com"
+            class="flex-1 px-6 py-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
+          />
+          <button
+            type="submit"
+            class="px-8 py-3 bg-white text-unam-blue-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors shadow-lg hover:shadow-xl"
+          >
+            Suscribirse
+          </button>
+        </div>
+
+        <!-- Mensajes de estado -->
+        <div
+          x-show="status"
+          x-transition
+          class="max-w-xl mx-auto"
+          style="display: none;"
+        >
+          <div
+            :class="{
+              'bg-green-500/20 border-green-500/50 text-green-100': status === 'success',
+              'bg-red-500/20 border-red-500/50 text-red-100': status === 'error'
+            }"
+            class="px-4 py-3 rounded-lg border backdrop-blur-sm"
+          >
+            <p x-text="message" class="text-sm"></p>
+          </div>
+        </div>
+
+        <p class="text-sm text-white/70">
+          No compartimos tu información. Puedes cancelar tu suscripción en cualquier momento.
+        </p>
+      </form>
+    </div>
+  </div>
+</section>

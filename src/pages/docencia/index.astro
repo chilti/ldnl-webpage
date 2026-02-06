@@ -1,0 +1,160 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const docenciaEntries = await getCollection('docencia');
+---
+
+<BaseLayout title="Docencia" description="Formación de científicos en el Laboratorio de Dinámica No Lineal">
+  <main class="min-h-screen bg-white dark:bg-gray-900">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-accent-cyan-600 to-unam-blue-600 text-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-display font-bold mb-6 animate-fade-in">
+            Docencia
+          </h1>
+          <p class="text-xl text-white/90 animate-fade-in" style="animation-delay: 0.2s">
+            Nuestro objetivo es formar científicos capaces de abordar problemas multidisciplinarios. 
+            Los alumnos formados en nuestro laboratorio han colaborado en proyectos de investigación 
+            y desarrollo de tecnologías de software.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Teaching Areas -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          {docenciaEntries.map((entry, index) => (
+            <a 
+              href={`/docencia/${entry.slug}`}
+              class="card p-8 text-center group animate-fade-in"
+              style={`animation-delay: ${0.1 * index}s`}
+            >
+              <div class="mb-4">
+                {entry.data.type === 'tesis' && (
+                  <svg class="w-16 h-16 mx-auto text-unam-blue-500 dark:text-accent-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                  </svg>
+                )}
+                {entry.data.type === 'taller' && (
+                  <svg class="w-16 h-16 mx-auto text-unam-blue-500 dark:text-accent-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/>
+                  </svg>
+                )}
+                {entry.data.type === 'texto' && (
+                  <svg class="w-16 h-16 mx-auto text-unam-blue-500 dark:text-accent-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                  </svg>
+                )}
+              </div>
+              
+              <h2 class="text-2xl font-display font-bold text-gray-900 dark:text-white mb-3 group-hover:text-unam-blue-500 dark:group-hover:text-accent-cyan-500 transition-colors">
+                {entry.data.title}
+              </h2>
+              
+              <p class="text-gray-600 dark:text-gray-400 mb-4">
+                {entry.data.description}
+              </p>
+              
+              <div class="flex items-center justify-center text-unam-blue-500 dark:text-accent-cyan-500 font-medium group-hover:underline">
+                Ver más
+                <svg class="w-5 h-5 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Highlights Section -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-800">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-display font-bold text-gray-900 dark:text-white mb-8 text-center">
+            Formación Multidisciplinaria
+          </h2>
+          
+          <div class="grid md:grid-cols-2 gap-6">
+            <div class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-display font-semibold text-gray-900 dark:text-white mb-3">
+                Áreas de Formación
+              </h3>
+              <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  Sistemas Dinámicos No Lineales
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  Bioinformática Computacional
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  Neuroinformática
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  Ciencia de Datos
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  Desarrollo de Software Científico
+                </li>
+              </ul>
+            </div>
+            
+            <div class="bg-white dark:bg-gray-900 p-6 rounded-lg shadow-md">
+              <h3 class="text-xl font-display font-semibold text-gray-900 dark:text-white mb-3">
+                Experiencia Práctica
+              </h3>
+              <p class="text-gray-700 dark:text-gray-300 mb-4">
+                Los estudiantes adquieren experiencia en:
+              </p>
+              <ul class="space-y-2 text-gray-700 dark:text-gray-300">
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-unam-blue-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                  Proyectos de investigación
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-unam-blue-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                  Desarrollo de software
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-unam-blue-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                  Colaboración multidisciplinaria
+                </li>
+                <li class="flex items-start gap-2">
+                  <svg class="w-5 h-5 text-unam-blue-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                  Publicación de resultados
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

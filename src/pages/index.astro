@@ -1,0 +1,184 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/home/Hero.astro';
+import ResearchCards from '../components/home/ResearchCards.astro';
+import PublicationsSlider from '../components/home/PublicationsSlider.astro';
+---
+
+<BaseLayout title="Laboratorio de Dinámica No Lineal | UNAM">
+	<main>
+		<Hero />
+		<PublicationsSlider />
+		<ResearchCards />
+		
+		<!-- Content sections -->
+		<section class="py-20">
+			<div class="container mx-auto px-4">
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+					<!-- Docencia -->
+					<article 
+						class="card p-6"
+						x-data
+						x-intersect="$el.classList.add('animate-in-up')"
+					>
+						<div class="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-lg flex items-center justify-center mb-4">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253" />
+							</svg>
+						</div>
+						<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Docencia</h3>
+						<p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+							Formación de científicos capaces de abordar problemas multidisciplinarios en sistemas complejos.
+						</p>
+						<a href="/docencia" class="inline-flex items-center gap-2 text-unam-blue-500 dark:text-accent-cyan-500 font-medium hover:gap-3 transition-all">
+							Ver más
+							<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+							</svg>
+						</a>
+					</article>
+					
+					<!-- Investigación -->
+					<article 
+						class="card p-6"
+						x-data
+						x-intersect="$el.classList.add('animate-in-up')"
+						style="animation-delay: 0.1s"
+					>
+						<div class="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-lg flex items-center justify-center mb-4">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+							</svg>
+						</div>
+						<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Investigación</h3>
+						<p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+							Proyectos de vanguardia en bioinformática, neuroinformática y ciencia de datos.
+						</p>
+						<a href="/investigacion" class="inline-flex items-center gap-2 text-unam-blue-500 dark:text-accent-cyan-500 font-medium hover:gap-3 transition-all">
+							Ver más
+							<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+							</svg>
+						</a>
+					</article>
+					
+					<!-- Tecnología -->
+					<article 
+						class="card p-6"
+						x-data
+						x-intersect="$el.classList.add('animate-in-up')"
+						style="animation-delay: 0.2s"
+					>
+						<div class="w-12 h-12 bg-gradient-to-br from-orange-500 to-red-500 rounded-lg flex items-center justify-center mb-4">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4" />
+							</svg>
+						</div>
+						<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Tecnología</h3>
+						<p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+							Desarrollo de software libre para investigación y docencia en sistemas dinámicos.
+						</p>
+						<a href="/tecnologia" class="inline-flex items-center gap-2 text-unam-blue-500 dark:text-accent-cyan-500 font-medium hover:gap-3 transition-all">
+							Ver más
+							<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+							</svg>
+						</a>
+					</article>
+					
+					<!-- Vinculación -->
+					<article 
+						class="card p-6"
+						x-data
+						x-intersect="$el.classList.add('animate-in-up')"
+						style="animation-delay: 0.3s"
+					>
+						<div class="w-12 h-12 bg-gradient-to-br from-green-500 to-teal-500 rounded-lg flex items-center justify-center mb-4">
+							<svg class="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+							</svg>
+						</div>
+						<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-3">Vinculación</h3>
+						<p class="text-gray-600 dark:text-gray-400 mb-4 text-sm">
+							Colaboraciones académicas y con el sector público para resolver problemas sociales.
+						</p>
+						<a href="/proyectos" class="inline-flex items-center gap-2 text-unam-blue-500 dark:text-accent-cyan-500 font-medium hover:gap-3 transition-all">
+							Ver más
+							<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+							</svg>
+						</a>
+					</article>
+				</div>
+			</div>
+		</section>
+		
+		<!-- Recent publications -->
+		<section class="py-20 bg-gray-50 dark:bg-gray-800/50">
+			<div class="container mx-auto px-4">
+				<div class="text-center mb-12">
+					<h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 dark:text-white mb-4">
+						Publicaciones Recientes
+					</h2>
+					<p class="text-lg text-gray-600 dark:text-gray-400">
+						Investigación de impacto internacional
+					</p>
+				</div>
+				
+				<div class="max-w-4xl mx-auto space-y-6">
+					<!-- Publication 1 -->
+					<article class="card p-6 hover:shadow-2xl transition-shadow">
+						<div class="flex items-start gap-4">
+							<div class="flex-shrink-0">
+								<span class="inline-block px-3 py-1 bg-unam-blue-100 dark:bg-unam-blue-900/30 text-unam-blue-700 dark:text-unam-blue-300 text-sm font-medium rounded-full">
+									2024
+								</span>
+							</div>
+							<div class="flex-1">
+								<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
+									Neural longitudinal mapping of multidimensional performance profiles of Latin American universities
+								</h3>
+								<p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
+									Jiménez-Andrade, J. L., Martí-Lahera, Y., & Carrillo Calvet, H. (2024). <em>Iberoamerican Journal of Science Measurement and Communication</em>, 4(1).
+								</p>
+								<div class="flex gap-3">
+									<a href="#" class="text-sm text-unam-blue-500 dark:text-accent-cyan-500 hover:underline">Ver artículo</a>
+									<a href="#" class="text-sm text-unam-blue-500 dark:text-accent-cyan-500 hover:underline">Citas</a>
+								</div>
+							</div>
+						</div>
+					</article>
+					
+					<!-- Publication 2 -->
+					<article class="card p-6 hover:shadow-2xl transition-shadow">
+						<div class="flex items-start gap-4">
+							<div class="flex-shrink-0">
+								<span class="inline-block px-3 py-1 bg-unam-blue-100 dark:bg-unam-blue-900/30 text-unam-blue-700 dark:text-unam-blue-300 text-sm font-medium rounded-full">
+									2024
+								</span>
+							</div>
+							<div class="flex-1">
+								<h3 class="text-lg font-bold text-gray-900 dark:text-white mb-2">
+									Exploring research on ecotechnology through artificial intelligence and bibliometric maps
+								</h3>
+								<p class="text-sm text-gray-600 dark:text-gray-400 mb-3">
+									Ruiz-Sánchez, R., Arencibia-Jorge, R., Tagüeña, J., Jiménez-Andrade, J. L., & Carrillo-Calvet, H. (2024). <em>Environmental Science and Ecotechnology</em>, 21, 100386.
+								</p>
+								<div class="flex gap-3">
+									<a href="#" class="text-sm text-unam-blue-500 dark:text-accent-cyan-500 hover:underline">Ver artículo</a>
+									<a href="#" class="text-sm text-unam-blue-500 dark:text-accent-cyan-500 hover:underline">Citas</a>
+								</div>
+							</div>
+						</div>
+					</article>
+					
+					<div class="text-center mt-8">
+						<a href="/publicaciones" class="btn-primary">
+							Ver todas las publicaciones
+						</a>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</BaseLayout>

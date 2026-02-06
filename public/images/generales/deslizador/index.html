@@ -1,0 +1,680 @@
+<!DOCTYPE HTML>
+<html lang="es">
+	<head>
+		<title>Laboratorio de Din&aacute;mica no Lineal, UNAM, México</title>
+		<link href="imagenes/generales/iconos/ldnl.ico" rel="shortcut icon"/>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1"/>
+		<link rel="stylesheet" href="css/general/estilo.css"/>
+		<link rel="stylesheet" href="css/index/estructura_index.css"/>
+		<link rel="stylesheet" href="css/menu/menu.css"/>
+		<link rel="stylesheet" href="css/flexslider/flexslider.css"/>
+		<link rel="stylesheet" href="css/eventos/ticker.css"/>		
+	</head>
+	<body>
+		<script type="text/javascript" src="js/research_gate/research_gate.js"></script>	
+		<div id="contenedor-icono-menu" class="color-menu-desactivado">
+			<span id="icono-menu" class="ico-moon-menu"></span>
+			<span id="subtitulo-icono-menu">Menu</span>
+		</div>
+		<div id="contenedor-menu">
+			<div id="contenedor-escudo-menu">
+				<img src="imagenes/generales/escudos/escudo1.gif" alt="UNAM" width="300" height="420">
+			</div>
+			<!-- Start Nav -->
+			<nav id="menu">
+				<!-- Start Nav Topnav -->
+				<ul>
+					<li>
+						<span>&nbsp;&nbsp;</span>
+						<a href="index.html" class="texto-elemento-menu">Inicio </a>
+					</li>
+						<!-- Start Dropdown -->
+					<li>
+						<input id="checkbox-integrantes" name="checkbox-integrantes" type="checkbox" class="elemento-menu">
+						<span class="icon-angle-right"></span>
+						<label class="texto-elemento-menu" for="checkbox-integrantes">Integrantes</label>		
+						<ul class="submenu">
+							<li>
+								<input id="checkbox-responsable" name="checkbox-responsable" type="checkbox" class="elemento-menu">
+								<span class="icon-angle-right"></span>
+								<label class="texto-elemento-menu" for="checkbox-responsable">Responsable</label>
+								<ul class="submenu">
+									<li><a href="php/integrantes/responsable.php">Responsable</a></li>
+									<li><a href="php/hc/hc_semblanza.php">Semblanza</a></li>
+									<li><a href="php/hc/hc_publicaciones.php">Publicaciones</a></li>
+									<li><a href="php/hc/cursos.php">Cursos</a></li>
+								</ul>
+							</li>
+							<li><a href="php/nosotros/laboratorio.php">Laboratorio</a></li>
+							<li><a href="php/integrantes/coautores.php">Coautores</a></li>
+							<li><a href="php/integrantes/estudiantes.php">Estudiantes</a></li>
+							<li><a href="php/integrantes/galeria_de_fotos.php">Galer&iacute;a de fotos</a></li>
+						</ul>
+					</li>
+					<!-- End Dropdown -->														
+					<!-- Start Dropdown -->
+					<li>
+						<input id="checkbox-investigacion" name="checkbox-investigacion" type="checkbox" class="elemento-menu">
+						<span class="icon-angle-right"></span>
+						<label class="texto-elemento-menu" for="checkbox-investigacion">Investigaci&oacute;n</label>			
+						<ul class="submenu">
+							<li>
+								<input id="checkbox-bioinformatica" name="checkbox-bioinformatica" type="checkbox" class="elemento-menu">
+								<span class="icon-angle-right"></span>
+								<label class="texto-elemento-menu" for="checkbox-bioinformatica">Bioinform&aacute;tica</label>
+								<ul class="submenu">
+								
+									<li><a href="php/investigacion/bioinformatica_alineamiento.php">Alineamiento</a></li>
+									<li><a href="php/investigacion/bioinformatica_citas.php">Citations</a></li>
+									<li><a href="php/investigacion/bioinformatica_ligas.php">Links</a></li>
+								</ul>
+							</li>
+							<li>
+								<input id="checkbox-neuroinformatica" name="checkbox-neuroinformatica" type="checkbox" class="elemento-menu">
+								<span class="icon-angle-right"></span>
+								<label class="texto-elemento-menu" for="checkbox-neuroinformatica">Neuroinformatics</label>
+								<ul class="submenu">
+									<li><a href="php/investigacion/neuroinformatica.php">Neuroinformatics</a></li>
+									<li><a href="php/investigacion/neuroinformatica_modelos.php">Modelos de neuronas</a></li>
+									<li><a href="php/investigacion/neuroinformatica_redes.php">Redes neuronales</a></li>
+								</ul>
+							</li>				
+							<li><a href="php/investigacion/sistemas_dinamicos.php">Dynamical systems</a></li>
+							<li><a href="php/investigacion/mineria_de_datos.php">Data mining</a></li>
+						</ul>
+					</li>
+					<!-- End Dropdown -->
+					<!-- Start Dropdown -->
+					<li>
+						<input id="checkbox-docencia" name="checkbox-docencia" type="checkbox" class="elemento-menu">
+						<span class="icon-angle-right"></span>
+						<label class="texto-elemento-menu" for="checkbox-docencia">Docencia</label>			
+						<ul class="submenu">
+							<li>
+								<input id="checkbox-tesis" name="checkbox-tesis" type="checkbox" class="elemento-menu">
+								<span class="icon-angle-right"></span>
+								<label class="texto-elemento-menu" for="checkbox-tesis">Tesis</label>
+								<ul class="submenu">
+									<li><a href="php/docencia/tesis.php">Tesis</a></li>
+									<li><a href="php/tesis_proceso.php">En proceso</a></li>
+								</ul>
+							</li>														
+							<li><a href="php/docencia/talleres.php">Talleres</a></li>
+							<li><a href="php/docencia/textos.php">Textos de Docencia</a></li>
+							<li><a href="php/docencia/servicio_social.php">Servicio Social</a></li>
+						</ul>
+					</li>
+					<!-- End Dropdown -->														
+					<!-- Start Dropdown -->
+					<li>
+						<input id="checkbox-tecnologia" name="checkbox-tecnologia" type="checkbox" class="elemento-menu">
+						<span class="icon-angle-right"></span>
+						<label class="texto-elemento-menu" for="checkbox-tecnologia">Tecnolog&iacute;a</label>			
+						<ul class="submenu">
+							<li>
+								<input id="checkbox-integra" name="checkbox-integra" type="checkbox" class="elemento-menu">
+								<span class="icon-angle-right"></span>
+								<label class="texto-elemento-menu" for="checkbox-integra">Integra</label>
+								<ul class="submenu">
+									<li><a href="php/tecnologia/integra.php">Integra</a></li>
+									<li><a href="php/tecnologia/integra_screenshots.php">Screenshots</a></li>
+									<li><a href="php/tecnologia/integra_descargas.php">Descargas</a></li>
+								</ul>
+							</li>
+							<li>
+								<input id="checkbox-circle" name="checkbox-circle" type="checkbox" class="elemento-menu">
+								<span class="icon-angle-right"></span>
+								<label class="texto-elemento-menu" for="checkbox-circle">Circle</label>
+								<ul class="submenu">
+									<li><a href="php/tecnologia/circle.php">Circle</a></li>
+									<li><a href="php/tecnologia/circle_screenshots.php">Screenshots</a></li>
+									<li><a href="php/tecnologia/circle_descargas.php">Descargas</a></li>
+								</ul>
+							</li>	
+							<li>
+								<input id="checkbox-fractal" name="checkbox-fractal" type="checkbox" class="elemento-menu">
+								<span class="icon-angle-right"></span>
+								<label class="texto-elemento-menu" for="checkbox-fractal">Fractal</label>
+								<ul class="submenu">
+									<li><a href="php/tecnologia/fractal.php">Fractal</a></li>
+									<li><a href="php/tecnologia/fractal_screenshots.php">Screenshots</a></li>
+									<li><a href="php/tecnologia/fractal_descargas.php">Descargas</a></li>
+								</ul>
+							</li>				
+							<li><a href="php/tecnologia/diente_de_sierra.php">Diente de sierra</a></li>
+							<li><a href="php/tecnologia/integra_fire_systems.php">Integra Fire Systems</a></li>
+							<li><a href="php/tecnologia/integra_dos.php">Integra DOS</a></li>
+							<li>
+								<input id="checkbox-datasomining" name="checkbox-datasomining" type="checkbox" class="elemento-menu">
+								<span class="icon-angle-right"></span>
+								<label class="texto-elemento-menu" for="checkbox-datasomining">DataSOMining</label>
+								<ul class="submenu">
+									<li><a href="php/tecnologia/datasomining.php">DataSOMining</a></li>
+									<li><a href="php/tecnologia/datasomining_screenshots.php">Screenshots</a></li>
+									<li><a href="php/tecnologia/datasomining_descargas.php">Descargas</a></li>
+								</ul>
+							</li>
+							<li>
+								<input id="checkbox-labsom" name="checkbox-labsom" type="checkbox" class="elemento-menu">
+								<span class="icon-angle-right"></span>
+								<label class="texto-elemento-menu" for="checkbox-labsom">LabSOM</label>
+								<ul class="submenu">
+									<li><a href="php/tecnologia/labsom.php">LabSOM</a></li>
+									<li><a href="php/tecnologia/labsom_screenshots.php">Screenshots</a></li>
+									<li><a href="php/tecnologia/labsom_descargas.php">Descargas</a></li>
+								</ul>
+							</li>
+							<li>
+								<input id="checkbox-bansy3" name="checkbox-bansy3" type="checkbox" class="elemento-menu">
+								<span class="icon-angle-right"></span>
+								<label class="texto-elemento-menu" for="checkbox-bansy3">Bansy 3</label>
+								<ul class="submenu">
+									<li><a href="php/tecnologia/bansy3.php">Bansy 3</a></li>
+									<li><a href="php/tecnologia/bansy3_screenshots.php">Screenshots</a></li>
+									<li><a href="php/tecnologia/bansy3_descargas.php">Descargas</a></li>
+								</ul>
+							</li>					
+							<li><a href="php/tecnologia/vibliosom.php">ViBlioSOM Software</a></li>			
+						</ul>
+					</li>
+					<!-- End Dropdown -->
+					<!-- Start Dropdown -->
+					<li>
+						<input id="checkbox-proyectos" name="checkbox-proyectos" type="checkbox" class="elemento-menu">
+						<span class="icon-angle-right"></span>
+						<label class="texto-elemento-menu" for="checkbox-proyectos">Proyectos</label>			
+						<ul class="submenu">
+							<li><a href="php/proyectos/investigacion.php">Investigaci&oacute;n</a></li>
+							<li><a href="php/proyectos/docencia.php">Docencia</a></li>
+							<li><a href="php/proyectos/arte_y_ciencia.php">Arte y Ciencia</a></li>
+						</ul>
+					</li>
+					<!-- End Dropdown -->
+					<!-- Start Dropdown -->
+					<li>
+						
+						<input id="checkbox-vinculacion" name="checkbox-vinculacion" type="checkbox" class="elemento-menu">
+						<span class="icon-angle-right"></span>
+						<label class="texto-elemento-menu" for="checkbox-vinculacion">Vinculaci&oacute;n </label>
+								
+						<ul class="submenu">
+							<li><a href="php/vinculacion/colaboracion_academica.php">Colaboraci&oacute;n acad&eacute;mica</a></li>
+							<li><a href="php/vinculacion/gobierno.php">Gobierno</a></li>
+							<li><a href="php/vinculacion/pei.php">CONACYT (PEI)</a></li>
+						</ul>
+					</li>
+					<!-- End Dropdown -->
+				</ul>
+				<!-- End Nav Topnav -->
+			</nav>
+			<!-- End Nav -->
+		</div>		
+		<!-- Encabezado -->
+		<header id="encabezado">
+			<!-- Encabezado-lado-izquierdo -->
+			<div id="encabezado-lado-izquierdo">
+				<!-- Escudo-imagen -->
+                <div id="escudo-imagen">
+					<a href="http://www.unam.mx">
+						<img src="imagenes/generales/escudos/escudo1.jpg" width="100" height="120"  alt="Universidad Nacional Autónoma de México, UNAM">
+					</a>
+				</div>
+				<!-- Fin escudo-imagen -->
+				<!-- Escudo-subtitulo -->
+                <div id="escudo-subtitulo">
+					<img src="imagenes/generales/varios/nombre_unam.png" alt="UNAM">
+				</div>
+				<!-- Fin escudo-subtitulo -->				
+			</div>
+			<!-- Fin encabezado-lado-izquierdo -->
+			<!-- Encabezado-centro -->
+			<div id ="encabezado-centro">
+				<h3 class="color-azul1 italica">Laboratorio de Din&aacute;mica no lineal </h3>
+				<h5 class="color-gris1"> <a href="https://www.matematicas.unam.mx/"> Departamento de Matem&aacute;ticas</a>, <a href="https://www.fciencias.unam.mx/">Facultad de Ciencias</a>, Universidad Aut&oacute;noma de M&eacute;xico</h5>
+			</div>
+			<!-- Fin encabezado-centro -->
+			<!-- Encabezado-lado-derecho -->
+			<div id="encabezado-lado-derecho">
+				<img src="imagenes/generales/logotipos/ldnl2.png" alt="Laboratorio de dinámica no lineal">
+			</div>
+			<!-- Fin encabezado-lado-derecho -->
+		</header>
+		<!-- Fin encabezado -->
+		<!-- Start Main-container -->
+		<div class="main-container">
+			<!-- Start Secondary-container -->	
+			<div class="secondary-container">
+				<!-- Start Navbar navbar-static-top -->
+				<div class="navbar navbar-static-top">
+					<!-- Navigation -->
+					<div class="navigation">
+						<!-- Start Nav -->
+						<nav>
+							<!-- Start Nav Topnav -->
+							<ul class="nav topnav">
+								<li>
+								<a href="index.html">Inicio </a>
+								</li>
+									<!-- Start Dropdown -->
+								<li class="dropdown">
+								<a href="php/integrantes/responsable.php">Integrantes <i class="icon-angle-down"></i></a>
+								<ul class="dropdown-menu">
+									<li><a href="php/nosotros/laboratorio.php">Laboratorio</a></li>
+									<li><a href="php/integrantes/responsable.php">Responsable</a></li>
+									<li><a href="php/integrantes/coautores.php">Coautores</a></li>
+									<li><a href="php/integrantes/estudiantes.php">Estudiantes</a></li>
+									<li><a href="php/integrantes/galeria_de_fotos.php">Galería de fotos</a></li>
+								</ul>
+								</li>
+								<!-- End Dropdown -->														
+								<!-- Start Dropdown -->
+								<li class="dropdown">
+								<a href="php/investigacion/bioinformatica_alineamiento.php">Investigaci&oacute;n <i class="icon-angle-down"></i></a>
+								<ul class="dropdown-menu">
+									<li><a href="php/investigacion/bioinformatica_alineamiento.php">Bioinform&aacute;tica</a></li>
+									<li><a href="php/investigacion/neuroinformatica.php">Neuroinformatics</a></li>
+									<li><a href="php/investigacion/sistemas_dinamicos.php">Dynamical systems</a></li>
+									<li><a href="php/investigacion/mineria_de_datos.php">Data mining</a></li>
+								</ul>
+								</li>
+								<!-- End Dropdown -->
+								<!-- Start Dropdown -->
+								<li class="dropdown">
+								<a href="php/docencia/tesis.php">Docencia <i class="icon-angle-down"></i></a>
+								<ul class="dropdown-menu">
+									<li><a href="php/docencia/tesis.php">Tesis</a></li>										
+									<li><a href="php/docencia/talleres.php">Talleres</a></li>
+									<li><a href="php/docencia/textos.php">Textos de Docencia</a></li>
+									<li><a href="php/docencia/servicio_social.php">Servicio Social</a></li>
+								</ul>
+								</li>
+								<!-- End Dropdown -->														
+								<!-- Start Dropdown -->
+								<li class="dropdown">
+								<a href="#">Tecnolog&iacute;a <i class="icon-angle-down"></i></a>
+								<ul class="dropdown-menu">
+									<li><a href="php/tecnologia/integra.php">Integra</a></li>
+									<li><a href="php/tecnologia/circle.php">Circle</a></li>
+									<li><a href="php/tecnologia/fractal.php">Fractal</a></li>
+									<li><a href="php/tecnologia/diente_de_sierra.php">Diente de sierra</a></li>
+									<li><a href="php/tecnologia/integra_fire_systems.php">Integra Fire Systems</a></li>
+									<li><a href="php/tecnologia/integra_dos.php">Integra DOS</a></li>
+									<li><a href="php/tecnologia/datasomining.php">DataSOMining</a></li>
+									<li><a href="php/tecnologia/labsom.php">LabSOM</a></li>
+									<li><a href="php/tecnologia/bansy3.php">Bansy 3</a></li>	
+									<li><a href="php/tecnologia/.php">ViBlioSOM Software</a></li>			
+								</ul>
+								</li>
+								<!-- End Dropdown -->
+								<!-- Start Dropdown -->
+								<li class="dropdown">
+								<a href="php/proyectos/investigacion.php">Proyectos <i class="icon-angle-down"></i></a>
+								<ul class="dropdown-menu">
+									<li><a href="php/proyectos/investigacion.php">Investigaci&oacute;n</a></li>
+									<li><a href="php/proyectos/docencia.php">Docencia</a></li>
+									<li><a href="php/proyectos/arte_y_ciencia.php">Arte y Ciencia</a></li>
+								</ul>
+								</li>
+								<!-- End Dropdown -->
+								<!-- Start Dropdown -->
+								<li class="dropdown">
+								<a href="php/vinculacion/colaboracion_academica.php">Vinculaci&oacute;n <i class="icon-angle-down"></i></a>
+								<ul class="dropdown-menu">
+									<li><a href="php/vinculacion/colaboracion_academica.php">Colaboraci&oacute;n acad&eacute;mica</a></li>
+									<li><a href="php/vinculacion/gobierno.php">Gobierno</a></li>
+									<li><a href="php/vinculacion/pei.php">CONACYT (PEI)</a></li>
+								</ul>
+								</li>
+								<!-- End Dropdown -->
+							</ul>
+							<!-- End Nav Topnav -->
+						</nav>
+						<!-- End Nav -->
+					</div>
+					<!-- End Navigation -->
+				</div>
+				<!-- End Navbar navbar-static-top -->
+			</div>
+			<!-- End Secondary-container -->
+		</div>
+		<!-- End Main-container -->
+		
+		<!--Inicio centro-->
+		<div id="centro">
+			<!--Inicio anuncios-->
+			<div id="anuncios">
+				<!--Inicio carousel-->						
+				<div id="carousel">
+					<!--Inicio flexslider-->
+					<div class="flexslider" >
+					  <ul class="slides">
+					  	
+						<li>
+							<a href="https://www.researchgate.net/publication/243472209_The_Multiple_Sequence_Alignment_Problem_in_Biology">
+							<img class="imagenslide" src="imagenes/generales/deslizador/bioinformatics.jpg" alt="Bioinformatics" >
+							</a>
+							
+							<h1  style="text-align:center">
+								<a href="https://doi.org/10.1137/0148063" >The multiple sequence alignment problem in biology</a> H Carrillo, D Lipman. SIAM Journal on Applied Mathematics, 1073-1082, 1988. <a href="https://scholar.google.com/citations?view_op=view_citation&hl=es&user=HWRDV7gAAAAJ&citation_for_view=HWRDV7gAAAAJ:0EnyYjriUFMC">Citas.</a>
+							</h1>
+													
+						</li>
+						<li>
+						
+							<a href="https://www.researchgate.net/publication/377163161_Exploring_research_on_ecotechnology_through_artificial_intelligence_and_bibliometric_maps">
+							
+							<img class="imagenslide" src="imagenes/generales/deslizador/ecotechnology2.png" alt="Ecotecnologias">
+							</a>
+							
+							<h1  style="text-align:center">
+								<a href="https://www.sciencedirect.com/science/article/pii/S2666498423001515">Exploring research on ecotechnology through artificial intelligence and bibliometric maps. </a>Ricardo Ruiz-Sánchez, Ricardo Arencibia-Jorge, Julia Tagüeña, José Luis Jiménez-Andrade, Humberto Carrillo-Calvet. Environmental Science and Ecotechnology 21, 100386, 2024. <a href="https://scholar.google.com/citations?view_op=view_citation&hl=es&user=HWRDV7gAAAAJ&sortby=pubdate&citation_for_view=HWRDV7gAAAAJ:XiSMed-E-HIC">Citas.</a>
+							</h1>
+													
+						</li>										
+						<li>
+							
+							<a href="https://www.researchgate.net/publication/40806003_Unfolding_an_electronic_integrate-and-fire_circuit">							
+							<img class="imagenslide" src="imagenes/generales/deslizador/dientedesierra2.png" alt="Diente de Sierra">	
+							
+							
+							<h1  style="text-align:center">
+								<a href="https://doi.org/10.1007/s00422-009-0358-x">Unfolding an electronic integrate-and-fire circuit. </a> H Carrillo, F Hoppensteadt. Biological cybernetics 102 (1), 1-8, 2010. <a href="https://scholar.google.com/citations?view_op=view_citation&hl=es&user=HWRDV7gAAAAJ&citation_for_view=HWRDV7gAAAAJ:8k81kl-MbHgC">Citas.</a>
+							</h1>
+							
+																		
+						</li>
+						
+						
+						<li>
+							
+							<a href="https://www.researchgate.net/publication/371994862_Impact_of_institutional_organization_on_research_productivity_and_multidisciplinarity">							
+							<img class="imagenslide" src="imagenes/generales/deslizador/frontiers2.jpg" alt="Frontiers in Physics">	
+							
+							
+							<h1  style="text-align:center">
+								<a href="http://dx.doi.org/10.3389/fphy.2023.1161019">Impact of institutional organization on research productivity and multidisciplinarity </a> ALBERTO GARCIA RODRIGUEZ, Rafael Angel Barrio, Tzipe Govezensky, Tagüeña Parga, Miguel Robles Pérez, Humberto Carrillo Calvet, José Luis Jiménez Andrade, Ricardo Arencibia-Jorge, Kimmo Kaski. Frontiers in Physics 11, 1161019, 2023. <a href="https://scholar.google.com/citations?view_op=view_citation&hl=es&user=HWRDV7gAAAAJ&sortby=pubdate&citation_for_view=HWRDV7gAAAAJ:EUQCXRtRnyEC">Citas.</a>
+							</h1>
+							
+																		
+						</li>
+						
+						
+						
+						
+						
+						<li>
+							<a href="https://www.researchgate.net/publication/378301408_Organizational_changes_and_research_performance_A_multidimensional_assessment">
+							<img class="imagenslide" src="imagenes/generales/deslizador/trayectoriaIER2.png" alt="Trayectoria"/>		
+							</a>
+							<h1  style="text-align:center">
+								<a href="https://doi.org/10.1093/reseval/rvae005" >Organizational changes and research performance: A multidimensional assessment. </a>José Luis Jiménez-Andrade, Ricardo Arencibia-Jorge, Miguel Robles-Pérez, Julia Tagüeña, Tzipe Govezensky, Humberto Carrillo-Calvet, Rafael A Barrio, Kimmo Kaski. Research Evaluation, 2024. <a href="https://scholar.google.com/citations?view_op=view_citation&hl=es&user=HWRDV7gAAAAJ&sortby=pubdate&citation_for_view=HWRDV7gAAAAJ:Tiz5es2fbqcC" >Citas</a>
+							</h1>
+														
+						</li>
+						<li>
+							<a href="https://www.researchgate.net/publication/15302562_Analysis_of_an_autonomous_phase_model_for_neuronal_parabolic_bursting">
+							<img class="imagenslide" src="imagenes/generales/deslizador/bursting2.png" alt="Bursting">		
+							</a>
+							<h1  style="text-align:center">
+								<a href="https://doi.org/10.1007/bf00169567">Analysis of an autonomous phase model for neuronal parabolic bursting</a> SM Baert, J Rinzel, H Carrillo-Calvet. Journal of Mathematical Biology 33 (3), 309-333, 1995. <a href="https://scholar.google.com/citations?view_op=view_citation&hl=es&user=HWRDV7gAAAAJ&citation_for_view=HWRDV7gAAAAJ:kNdYIx-mwKoC" >Citas</a>
+							</h1>																	
+						</li>		
+
+						<li>
+							<a href="https://www.researchgate.net/publication/379092244_Neural_longitudinal_mapping_of_multidimensional_performance_profiles_of_Latin_American_universities">
+							<img class="imagenslide" src="imagenes/generales/deslizador/neurolongitudinal2.png" alt="Neurolongitudinal">	
+							</a>							
+							<h1  style="text-align:center">
+								<a href="https://doi.org/10.47909/ijsmc.92">Neural longitudinal mapping of multidimensional performance profiles of Latin American universities. </a> Jiménez-Andrade, J. L., Martí-Lahera, Y., & Carrillo Calvet, H. (2024). Iberoamerican Journal of Science Measurement and Communication, 4(1). <a href="https://scholar.google.com/citations?view_op=view_citation&hl=es&user=HWRDV7gAAAAJ&sortby=pubdate&citation_for_view=HWRDV7gAAAAJ:738O_yMBCRsC" > Citas</a>
+							</h1>
+																	
+						</li>								
+
+														
+					  </ul>
+					</div>
+					
+					
+					<!--Fin flexslider-->
+				</div>					
+				<!--Fin carousel-->
+			</div>
+			<!--Fin anuncios-->
+			<!---
+			<div id="buscador">
+			
+				<script>
+				  (function() {
+					var cx = '000900471343701878749:9au2uvh9sdg';
+					var gcse = document.createElement('script');
+					gcse.type = 'text/javascript';
+					gcse.async = true;
+					gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+					var s = document.getElementsByTagName('script')[0];
+					s.parentNode.insertBefore(gcse, s);
+				  })();
+				</script>
+				<gcse:search></gcse:search>
+			
+			
+			</div>-->
+			
+			<!--Inicio resumenes-secciones-->
+			<div id="resumenes-secciones">
+				<article id="resumen-seccion-1">
+					<h2 class="negrita">Docencia</h2>
+					<p>
+						Nuestro objetivo es formar cient&iacute;ficos capaces de abordar problemas multidisciplinarios. Los alumnos formados en nuestro laboratorio han colaborado en proyectos multidisciplinarios de investigaci&oacute;n y/o desarrollo de tecnolog&iacute;as de software. Esto les ha permitido consolidar su formaci&oacute;n acad&eacute;mica y a la vez adquirir la experiencia de dialogar y trabajar con profesionales de otras &aacute;reas para resolver problemas.
+					</p>
+					<a href="php/docencia/tesis.php">
+						<img src="imagenes/generales/caracteristicas/docencia.jpg" alt="Docencia" />
+					</a>						
+				</article>
+				
+				<article id="resumen-seccion-2">
+				<h2 class="negrita">Investigaci&oacute;n</h2>
+					<p>
+						Nuestras principales &aacute;reas de investigaci&oacute;n son: Modelaci&oacute;n Matem&aacute;tica de Neuronas, Bioinform&aacute;tica, Sistemas Din&aacute;micos, Ciencia de Datos, y Ciencia de la Ciencia.
+
+
+					</p>
+					<a href="php/investigacion/bioinformatica_alineamiento.php">
+						<img src="imagenes/bioinformatica/align3dL.png" alt="Investigaci&oacute;n" />
+					</a>			
+					
+				</article>	
+				
+				<article id="resumen-seccion-3">
+					<h2 class="negrita">Tecnolog&iacute;a</h2>
+					<p>
+						En todas nuestras investigaciones las herramientas de software son fundamentales. Es por ello que el desarrollo de nuevas tecnolog&iacute;as de software siempre ha acompañado nuestra labor docente y de investigaci&oacute;n. A la fecha hemos desarrollado X herramientas de software libre para la docencia y la investigaci&oacute;n.
+
+					</p>
+					<a href="php/tecnologia/circle.php">
+						<img src="imagenes/circle/imagen5.png" alt="Tecnolog&iacute;a" />
+					</a>
+				</article>
+
+				<article id="resumen-seccion-4">
+					<h2 class="negrita">Vinculaci&oacute;n</h2>
+					<p>
+						Las vinculaciones de colaboraci&oacute;n acad&eacute;mica, as&iacute; como vinculaciones  con el sector p&uacute;blico y privado para resolver problemas espec&iacute;ficos de la sociedad han orientado varios de nuestros proyectos de investigaci&oacute;n y proyectos de titulaci&oacute;n.
+
+
+					</p>
+					<a href="php/vinculacion/colaboracion_academica.php">
+						<img src="imagenes/generales/caracteristicas/vinculacion.jpg" alt="Vinculaci&oacute;n" />
+					</a>	
+				</article>		
+			</div>
+			<!--Fin resumenes-secciones-->	
+						
+			<!--Inicio nosotros
+			<div id="nosotros">
+				<div id="columna-1">
+					<div class="rg-plugin" data-type="institution" data-stats="true" data-faces="true" 		
+						data-publications="true" data-width="350" data-height="600" data-theme="light" data-installationId="587e50b5cbd5c22edc73b6e1">
+					</div>			
+				</div>
+				<article id="columna-2">
+					<header>
+						<h1>What We Do</h1>
+						<h2>A subheading about what we do</h2>
+					</header>
+					<ul>
+						<li>Sed mattis quis rutrum accum</li>
+						<li>Eu varius nibh suspendisse lorem</li>
+						<li>Magna eget odio amet mollis justo</li>
+						<li>Facilisis quis sagittis mauris</li>
+						<li>Amet tellus gravida lorem ipsum</li>
+					</ul>
+				</article>	
+				<article id="columna-3">
+					<header>
+						<h1>Eventos</h1>
+					</header>
+					<div id="contenedor-vticker">
+						<div class="vticker">
+							<ul>
+								<li> 
+									<img src="imagenes/noticias/international_conference_bioinformatics2.jpg" alt="9th International Conference on Bioinformatics">
+									<div class="vticker-texto">
+										<h3>9th International Conference on Bioinformatics</h3>
+										<a href="http://bioinformatics.conferenceseries.com/" target="_blank">
+										9th International Conference on Bioinformatics
+										</a>
+									</div>
+								</li>
+								<li> 
+									<img src="imagenes/noticias/international_conference_data_mining.jpg" alt="International Conference  on data mining">			
+									<div class="vticker-texto">
+										<h3>International Conference  on data mining</h3>		
+										<a href="http://www.siam.org/meetings/sdm17/" target="_blank">
+											International Conference  on data mining
+										</a>
+									</div>				
+								</li>
+								<li>
+									<img src="imagenes/noticias/international_conference_bigdata_and_datamining1.jpg" alt="4th International Conference on BigData Analysis and Data Mining">
+									<div class="vticker-texto">
+										<h3>4th International Conference on BigData Analysis and Data Mining</h3>			
+										<a href="http://datamining.conferenceseries.com/" target="_blank">
+											4th International Conference on BigData Analysis and Data Mining
+										</a>
+									</div>				
+								</li>
+								<li>
+									<img src="imagenes/noticias/international_neuroscience_winter_conference1.jpg" alt="19th International Neuroscience Winter Conference">
+									<div class="vticker-texto">
+										<h3>19th International Neuroscience Winter Conference</h3>		
+										<a href="http://www.winterneuroscience.org/2017/" target="_blank">
+											19th International Neuroscience Winter Conference
+										</a>
+									</div>
+								</li>
+								<li>
+									<img src="imagenes/noticias/international_conference_cognitive_neuroscience1.jpg" alt="International Conference for Cognitive Neuroscience">
+									<div class="vticker-texto">
+										<h3>International Conference for Cognitive Neuroscience</h3>				
+										<a href="http://www.icon2017.org/" target="_blank">
+											International Conference for Cognitive Neuroscience
+										</a>
+									</div>
+								</li>
+								<li>
+									<img src="imagenes/noticias/conference_applications_dynamical_systems1.jpg" alt="Conference on Application of Dynamical Systems">
+									<div class="vticker-texto">
+										<h3>Conference on Application of Dynamical Systems</h3>				
+										<a href="https://www.siam.org/meetings/ds15/" target="_blank">
+											Conference on Application of Dynamical Systems
+										</a>
+									</div>
+								</li>
+								<li>
+									<img src="imagenes/noticias/conference_meetings_applied_maths.jpg" alt="Conferences and Meetings on Applied Maths: Dynamic Systems, Control and Automation">
+									<div class="vticker-texto">
+										<h3>Conferences and Meetings on Applied Maths: Dynamic Systems, Control and Automation</h3>		
+										<a href="http://www.conference-service.com/conferences/dynamic-systems.html" target="_blank">
+											Conferences and Meetings on Applied Maths: Dynamic Systems, Control and Automation
+										</a>
+									</div>
+								</li>
+								<li>
+									<img src="imagenes/noticias/chaos_2017_international_conference.jpg" alt="10th International Conference on Chaotic Modeling, Simulation and Applications">
+									<div class="vticker-texto">
+										<h3>10th International Conference on Chaotic Modeling, Simulation and Applications</h3>			
+										<a href="http://www.cmsim.org/" target="_blank">
+											10th International Conference on Chaotic Modeling, Simulation and Applications
+										</a>
+									</div>
+								</li>
+								<li>				
+									<img src="imagenes/noticias/international_symposium_sensor_science.jpg" alt="5th International Symposium on Sensor Science (I3S 2017)">
+									<div class="vticker-texto">
+										<h3>5th International Symposium on Sensor Science (I3S 2017)</h3>				
+										<a href="http://sciforum.net/conference/i3s2017Barcelona" target="_blank">
+											5th International Symposium on Sensor Science (I3S 2017)
+										</a>
+									</div>
+								</li>			
+							</ul>
+						</div>
+						<div id="control-vticker">
+							<button class="toggle">toggle</button>
+						</div>
+					</div>
+				</article>		
+			</div>-->
+			<!--Fin nosotros-->
+		</div>
+		<!--Fin centro-->		
+		<!--Inicio pie-->
+		<footer id="pie">
+			<p>
+				Laboratorio de Din&aacute;mica no Lineal<br>
+				Departamento de Matem&aacute;ticas<br>
+				Facultad de Ciencias<br>
+				UNAM<br> 
+
+			</p>
+			<div id="pie-contacto">
+				Circuito Exterior S/N, Cd. Universitaria, Colonia Copilco el Bajo,
+				Delegación Coyoacán, México D.F.
+				C.P. 04510<br>
+				Tel. 56 23 02 22 Ext. 45764
+			</div>
+			<div id="pie-derechos-autor">
+				<div id="derechos-autor-lado-izquierdo">
+				
+				</div>
+				<div id="derechos-autor-centro">
+					Hecho en México, Universidad Nacional Autónoma de México (UNAM), todos los derechos reservados 2017.
+					Esta página puede ser reproducida con fines no lucrativos, siempre y cuando no se mutile, se cite la fuente completa y su dirección electrónica.
+					De otra forma, requiere permiso previo por escrito de la institución.
+				</div>
+				<div id="derechos-autor-lado-derecho">
+					Sitio web administrado por<br> 
+					<span>Laboratorio de dinámica no lineal</span>
+					<br>
+					Ultima actualización  
+					<br> 
+					<span>31 de Enero del 2017</span>
+				</div>
+			</div>
+		</footer>
+		<!--Fin pie-->	
+		<!-- Menu -->
+		<script type="text/javascript" src="js/menu/jquery.js"></script>
+		<script type="text/javascript" src="js/menu/custom.js"></script>
+		<script type="text/javascript" src="js/menu_vertical/menu_vertical.js" ></script>
+		<!-- FlexSlider -->
+		<script type="text/javascript" src="js/flexslider/jquery.flexslider.js" ></script>
+		<script type="text/javascript" src="js/flexslider/flexslider.js" ></script>
+		<!-- Ticker -->
+		<script type="text/javascript" src="js/ticker/jquery/jquery.min.js"></script>
+		<script type="text/javascript" src="js/ticker/jquery/jquery.easing.min.js"></script>
+		<script type="text/javascript" src="js/ticker/jquery.easy-ticker.js"></script>
+		<script type="text/javascript" src="js/ticker/ticker.js"></script>
+	</body>
+</html>

@@ -1,0 +1,111 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const investigacionEntries = await getCollection('investigacion');
+
+const areas = {
+  'bioinformatica': {
+    title: 'Bioinformática',
+    description: 'Algoritmos y métodos para el análisis de secuencias biológicas',
+    icon: '🧬',
+    entries: investigacionEntries.filter(e => e.data.area === 'bioinformatica')
+  },
+  'neuroinformatica': {
+    title: 'Neuroinformática',
+    description: 'Modelación matemática de neuronas y redes neuronales',
+    icon: '🧠',
+    entries: investigacionEntries.filter(e => e.data.area === 'neuroinformatica')
+  },
+  'sistemas-dinamicos': {
+    title: 'Sistemas Dinámicos',
+    description: 'Análisis de sistemas no lineales y teoría del caos',
+    icon: '🌀',
+    entries: investigacionEntries.filter(e => e.data.area === 'sistemas-dinamicos')
+  },
+  'data-science': {
+    title: 'Data Science',
+    description: 'Ciencia de datos y análisis bibliométrico',
+    icon: '📊',
+    entries: investigacionEntries.filter(e => e.data.area === 'data-science')
+  }
+};
+---
+
+<BaseLayout title="Investigación" description="Áreas de investigación del Laboratorio de Dinámica No Lineal">
+  <main class="min-h-screen bg-white dark:bg-gray-900">
+    <!-- Hero Section -->
+    <section class="bg-gradient-primary text-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-display font-bold mb-6 animate-fade-in">
+            Investigación
+          </h1>
+          <p class="text-xl text-white/90 animate-fade-in" style="animation-delay: 0.2s">
+            Nuestras principales áreas de investigación son: Modelación Matemática de Neuronas, 
+            Bioinformática, Sistemas Dinámicos, Ciencia de Datos, y Ciencia de la Ciencia.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Research Areas Grid -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+          {Object.entries(areas).map(([key, area], index) => (
+            <div 
+              class="card p-8 animate-fade-in"
+              style={`animation-delay: ${0.1 * (index + 1)}s`}
+            >
+              <div class="flex items-start gap-4 mb-4">
+                <span class="text-5xl">{area.icon}</span>
+                <div>
+                  <h2 class="text-2xl font-display font-bold text-gray-900 dark:text-white mb-2">
+                    {area.title}
+                  </h2>
+                  <p class="text-gray-600 dark:text-gray-400">
+                    {area.description}
+                  </p>
+                </div>
+              </div>
+              
+              <div class="mt-6 space-y-3">
+                {area.entries.map(entry => (
+                  <a 
+                    href={`/investigacion/${entry.slug}`}
+                    class="block p-4 bg-gray-50 dark:bg-gray-800 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-200"
+                  >
+                    <h3 class="font-semibold text-unam-blue-500 dark:text-accent-cyan-500 mb-1">
+                      {entry.data.title}
+                    </h3>
+                    <p class="text-sm text-gray-600 dark:text-gray-400">
+                      {entry.data.description}
+                    </p>
+                  </a>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Publications -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-800">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <h2 class="text-3xl font-display font-bold text-gray-900 dark:text-white mb-8 text-center">
+            Publicaciones Destacadas
+          </h2>
+          <p class="text-center text-gray-600 dark:text-gray-400 mb-8">
+            Consulta nuestras publicaciones más recientes en 
+            <a href="https://scholar.google.com/citations?user=HWRDV7gAAAAJ" target="_blank" class="text-unam-blue-500 dark:text-accent-cyan-500 hover:underline">
+              Google Scholar
+            </a>
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>

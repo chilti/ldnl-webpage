@@ -1,0 +1,84 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
+
+export async function getStaticPaths() {
+  const proyectosEntries = await getCollection('proyectos');
+  return proyectosEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<BaseLayout title={entry.data.title} description={entry.data.description}>
+  <Breadcrumbs items={[
+    { label: 'Proyectos', href: '/proyectos' },
+    { label: entry.data.title }
+  ]} />
+  <main class="min-h-screen bg-white dark:bg-gray-900">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-accent-purple-600 to-unam-gold-600 text-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-display font-bold mb-4 animate-fade-in">
+            {entry.data.title}
+          </h1>
+          <p class="text-xl text-white/90 animate-fade-in" style="animation-delay: 0.2s">
+            {entry.data.description}
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Content Section -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <article class="prose lg:prose-xl dark:prose-invert max-w-none animate-fade-in" style="animation-delay: 0.3s">
+            <Content />
+          </article>
+          
+          <!-- Back to Projects -->
+          <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+            <a 
+              href="/proyectos" 
+              class="inline-flex items-center text-unam-blue-500 dark:text-accent-cyan-500 hover:underline font-medium"
+            >
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+              </svg>
+              Volver a Proyectos
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .prose :global(h2) {
+    @apply text-3xl font-display font-bold text-gray-900 dark:text-white mt-12 mb-6;
+  }
+  
+  .prose :global(h3) {
+    @apply text-2xl font-display font-semibold text-gray-800 dark:text-gray-100 mt-8 mb-4;
+  }
+  
+  .prose :global(h4) {
+    @apply text-xl font-display font-semibold text-gray-700 dark:text-gray-200 mt-6 mb-3;
+  }
+  
+  .prose :global(a) {
+    @apply text-unam-blue-500 dark:text-accent-cyan-500 hover:underline;
+  }
+  
+  .prose :global(ul) {
+    @apply list-disc list-inside space-y-2;
+  }
+</style>

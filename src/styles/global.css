@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    @apply scroll-smooth;
+  }
+  
+  body {
+    @apply font-body text-gray-900 dark:text-gray-100 bg-white dark:bg-gray-900 transition-colors duration-300;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display font-bold;
+  }
+}
+
+@layer components {
+  /* Glassmorphism */
+  .glass-card {
+    @apply bg-white/10 dark:bg-gray-800/10 backdrop-blur-md border border-white/20 dark:border-gray-700/20 rounded-xl shadow-xl;
+  }
+  
+  /* Gradient text */
+  .gradient-text {
+    @apply bg-gradient-to-r from-unam-blue-500 via-accent-cyan-500 to-accent-purple-500 bg-clip-text text-transparent;
+    background-size: 200% 200%;
+  }
+  
+  .gradient-text-animated {
+    @apply gradient-text animate-gradient-shift;
+  }
+  
+  /* Buttons */
+  .btn-primary {
+    @apply px-6 py-3 bg-gradient-primary text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300;
+  }
+  
+  .btn-secondary {
+    @apply px-6 py-3 bg-unam-gold-500 text-white font-medium rounded-lg shadow-lg hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300;
+  }
+  
+  .btn-outline {
+    @apply px-6 py-3 border-2 border-unam-blue-500 text-unam-blue-500 dark:border-accent-cyan-500 dark:text-accent-cyan-500 font-medium rounded-lg hover:bg-unam-blue-500 hover:text-white dark:hover:bg-accent-cyan-500 dark:hover:text-white transition-all duration-300;
+  }
+  
+  /* Cards */
+  .card {
+    @apply bg-white dark:bg-gray-800 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300;
+  }
+  
+  .card-gradient {
+    @apply relative overflow-hidden;
+  }
+  
+  .card-gradient::before {
+    content: '';
+    @apply absolute inset-0 bg-gradient-to-br from-unam-blue-500/10 to-accent-purple-500/10 opacity-0 hover:opacity-100 transition-opacity duration-300;
+  }
+  
+  /* Navigation */
+  .nav-link {
+    @apply px-4 py-2 text-gray-700 dark:text-gray-300 hover:text-unam-blue-500 dark:hover:text-accent-cyan-500 font-medium transition-colors duration-200;
+  }
+  
+  .nav-link-active {
+    @apply text-unam-blue-500 dark:text-accent-cyan-500 border-b-2 border-unam-blue-500 dark:border-accent-cyan-500;
+  }
+}
+
+@layer utilities {
+  /* Animations */
+  .animate-in {
+    @apply animate-fade-in;
+  }
+  
+  .animate-in-up {
+    @apply animate-slide-up;
+  }
+  
+  /* Scrollbar */
+  .scrollbar-thin::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-800;
+  }
+  
+  .scrollbar-thin::-webkit-scrollbar-thumb {
+    @apply bg-gray-300 dark:bg-gray-600 rounded-full hover:bg-gray-400 dark:hover:bg-gray-500;
+  }
+}

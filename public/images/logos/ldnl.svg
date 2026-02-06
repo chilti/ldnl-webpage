@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <!-- LDNL logo placeholder -->
+  <circle cx="50" cy="50" r="45" fill="#7209B7"/>
+  <path d="M 30 50 Q 50 30, 70 50 T 30 50" stroke="#00B4D8" stroke-width="2" fill="none"/>
+  <path d="M 35 55 Q 50 70, 65 55 T 35 55" stroke="#C5A572" stroke-width="2" fill="none"/>
+  <text x="50" y="85" font-family="Arial, sans-serif" font-size="8" font-weight="bold" fill="white" text-anchor="middle">LDNL</text>
+</svg>

@@ -1,0 +1,150 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Breadcrumbs from '../../components/layout/Breadcrumbs.astro';
+
+export async function getStaticPaths() {
+  const tecnologiaEntries = await getCollection('tecnologia');
+  return tecnologiaEntries.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<BaseLayout title={entry.data.title} description={entry.data.description}>
+  <Breadcrumbs items={[
+    { label: 'Tecnología', href: '/tecnologia' },
+    { label: entry.data.title }
+  ]} />
+  <main class="min-h-screen bg-white dark:bg-gray-900">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-unam-blue-600 to-accent-purple-600 text-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-display font-bold mb-4 animate-fade-in">
+            {entry.data.title}
+          </h1>
+          {entry.data.version && (
+            <p class="text-lg text-white/80 mb-4 animate-fade-in" style="animation-delay: 0.1s">
+              Versión {entry.data.version}
+            </p>
+          )}
+          <p class="text-xl text-white/90 animate-fade-in" style="animation-delay: 0.2s">
+            {entry.data.description}
+          </p>
+          
+          {entry.data.downloadUrl && (
+            <div class="mt-8 animate-fade-in" style="animation-delay: 0.3s">
+              <a 
+                href={entry.data.downloadUrl}
+                class="inline-flex items-center px-8 py-4 bg-white text-unam-blue-600 font-bold rounded-lg shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300"
+              >
+                <svg class="w-6 h-6 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/>
+                </svg>
+                Descargar {entry.data.title}
+              </a>
+            </div>
+          )}
+        </div>
+      </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    {entry.data.screenshots && entry.data.screenshots.length > 0 && (
+      <section class="py-16 bg-gray-50 dark:bg-gray-800">
+        <div class="container mx-auto px-4">
+          <h2 class="text-3xl font-display font-bold text-center text-gray-900 dark:text-white mb-12">
+            Capturas de Pantalla
+          </h2>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {entry.data.screenshots.map((screenshot, index) => (
+              <div 
+                class="rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition-shadow duration-300 animate-fade-in"
+                style={`animation-delay: ${0.1 * index}s`}
+              >
+                <img 
+                  src={screenshot} 
+                  alt={`${entry.data.title} screenshot ${index + 1}`}
+                  class="w-full h-auto"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Features Section -->
+    {entry.data.features && entry.data.features.length > 0 && (
+      <section class="py-16">
+        <div class="container mx-auto px-4">
+          <div class="max-w-4xl mx-auto">
+            <h2 class="text-3xl font-display font-bold text-gray-900 dark:text-white mb-8">
+              Características Principales
+            </h2>
+            <div class="grid md:grid-cols-2 gap-4">
+              {entry.data.features.map((feature, index) => (
+                <div 
+                  class="flex items-start gap-3 p-4 bg-gray-50 dark:bg-gray-800 rounded-lg animate-fade-in"
+                  style={`animation-delay: ${0.05 * index}s`}
+                >
+                  <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
+                  </svg>
+                  <span class="text-gray-700 dark:text-gray-300">{feature}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+    )}
+
+    <!-- Content Section -->
+    <section class="py-16 bg-white dark:bg-gray-900">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto">
+          <article class="prose lg:prose-xl dark:prose-invert max-w-none">
+            <Content />
+          </article>
+          
+          <!-- Back to Technology -->
+          <div class="mt-12 pt-8 border-t border-gray-200 dark:border-gray-700">
+            <a 
+              href="/tecnologia" 
+              class="inline-flex items-center text-unam-blue-500 dark:text-accent-cyan-500 hover:underline font-medium"
+            >
+              <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 19l-7-7m0 0l7-7m-7 7h18"/>
+              </svg>
+              Volver a Tecnología
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</BaseLayout>
+
+<style>
+  .prose :global(h2) {
+    @apply text-3xl font-display font-bold text-gray-900 dark:text-white mt-12 mb-6;
+  }
+  
+  .prose :global(h3) {
+    @apply text-2xl font-display font-semibold text-gray-800 dark:text-gray-100 mt-8 mb-4;
+  }
+  
+  .prose :global(a) {
+    @apply text-unam-blue-500 dark:text-accent-cyan-500 hover:underline;
+  }
+  
+  .prose :global(ul) {
+    @apply list-disc list-inside space-y-2;
+  }
+</style>
