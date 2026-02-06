@@ -7,6 +7,8 @@
         "dev": "astro dev",
         "start": "astro dev",
         "build": "astro build",
+        "build:subdir": "cross-env PUBLIC_BASE_PATH=/nuevositio/ astro build",
+        "build:prod": "cross-env PUBLIC_BASE_PATH=/ astro build",
         "preview": "astro preview",
         "astro": "astro"
     },
@@ -21,6 +23,7 @@
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.9",
-        "@tailwindcss/typography": "^0.5.15"
+        "@tailwindcss/typography": "^0.5.15",
+        "cross-env": "^10.1.0"
     }
 }
