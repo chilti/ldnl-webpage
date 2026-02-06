@@ -5,7 +5,7 @@
 <section class="relative min-h-[600px] md:min-h-[700px] flex items-center overflow-hidden bg-gradient-primary">
 	<!-- Animated background -->
 	<div class="absolute inset-0">
-		<canvas id="dynamical-system" class="w-full h-full opacity-30"></canvas>
+		<canvas id="dynamical-system" class="w-full h-full opacity-60"></canvas>
 	</div>
 	
 	<!-- Content -->
@@ -16,9 +16,9 @@
 				class="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 animate-fade-in"
 				style="animation-delay: 0.1s"
 			>
-				Explorando la
+				Sistemas Dinámicos
 				<span class="block mt-2 text-transparent bg-clip-text bg-gradient-to-r from-white via-unam-gold-300 to-white animate-gradient-shift" style="background-size: 200% 200%;">
-					Complejidad
+					No Lineales
 				</span>
 			</h1>
 			
@@ -27,7 +27,7 @@
 				class="text-xl md:text-2xl mb-8 text-white/90 animate-fade-in"
 				style="animation-delay: 0.3s"
 			>
-				Investigación de vanguardia en sistemas dinámicos no lineales
+				Investigación interdisciplinaria en modelado matemático y análisis de sistemas complejos
 			</p>
 			
 			<!-- Research areas badges -->
@@ -143,10 +143,10 @@
 					for (let i = 1; i < points.length; i++) {
 						ctx.lineTo(points[i].x, points[i].y);
 						
-						// Gradient color based on position
+						// Gradient color based on position - more visible
 						const alpha = i / points.length;
-						ctx.strokeStyle = `rgba(0, 180, 216, ${alpha * 0.8})`;
-						ctx.lineWidth = 2;
+						ctx.strokeStyle = `rgba(0, 180, 216, ${alpha})`;
+						ctx.lineWidth = 3;
 						ctx.stroke();
 						ctx.beginPath();
 						ctx.moveTo(points[i].x, points[i].y);
