@@ -21,41 +21,10 @@
 			</li>
 			
 			<!-- Integrantes -->
-			<li 
-				class="relative"
-				@mouseenter="activeMenu = 'integrantes'"
-				@mouseleave="activeMenu = null"
-			>
-				<button 
-					class="flex items-center gap-1 px-4 py-4 hover:bg-white/10 transition-colors font-medium"
-				>
+			<li>
+				<a href="/integrantes" class="block px-4 py-4 hover:bg-white/10 transition-colors font-medium">
 					Integrantes
-					<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-					</svg>
-				</button>
-				
-				<div 
-					x-show="activeMenu === 'integrantes'"
-					x-transition
-					class="absolute left-0 mt-0 w-64 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-b-lg shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden z-50"
-				>
-					<a href="/integrantes/responsable" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						Responsable
-					</a>
-					<a href="/integrantes/laboratorio" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						Laboratorio
-					</a>
-					<a href="/integrantes/coautores" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						Coautores
-					</a>
-					<a href="/integrantes/estudiantes" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						Estudiantes
-					</a>
-					<a href="/integrantes/galeria" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						Galería de fotos
-					</a>
-				</div>
+				</a>
 			</li>
 			
 			<!-- Investigación -->
@@ -78,17 +47,17 @@
 					x-transition
 					class="absolute left-0 mt-0 w-64 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-b-lg shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden z-50"
 				>
-					<a href="/investigacion/bioinformatica" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						Bioinformática
+					<a href="/investigacion/sistemas-dinamicos" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+						Ciencia Computacional
 					</a>
 					<a href="/investigacion/neuroinformatica" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						Neuroinformática
+						Inteligencia Computacional
 					</a>
-					<a href="/investigacion/sistemas-dinamicos" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						Sistemas Dinámicos
+					<a href="/investigacion/bioinformatica" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+						Ciencia Informática
 					</a>
 					<a href="/investigacion/data-science" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						Data Science
+						Ciencia de la Ciencia
 					</a>
 				</div>
 			</li>

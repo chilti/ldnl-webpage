@@ -80,6 +80,20 @@ const vinculacionCollection = defineCollection({
     }),
 });
 
+// Colección de Galería
+const galeriaCollection = defineCollection({
+    type: 'content',
+    schema: z.object({
+        title: z.string(),
+        description: z.string(),
+        category: z.enum(['sistemas-dinamicos', 'fractales', 'redes-complexas', 'caos']),
+        thumbnail: z.string().optional(),
+        script: z.string(), // Nombre del archivo sketch en src/scripts/sketches/
+        featured: z.boolean().default(false),
+        instructions: z.string().optional(), // Cómo interactuar
+    }),
+});
+
 export const collections = {
     'investigacion': investigacionCollection,
     'tecnologia': tecnologiaCollection,
@@ -87,4 +101,5 @@ export const collections = {
     'docencia': docenciaCollection,
     'proyectos': proyectosCollection,
     'vinculacion': vinculacionCollection,
+    'galeria': galeriaCollection,
 };

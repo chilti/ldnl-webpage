@@ -6,7 +6,7 @@
     "scripts": {
         "dev": "astro dev",
         "start": "astro dev",
-        "build": "astro build",
+        "build": "astro build && npx pagefind --site dist",
         "build:subdir": "cross-env PUBLIC_BASE_PATH=/nuevositio/ astro build",
         "build:prod": "cross-env PUBLIC_BASE_PATH=/ astro build",
         "preview": "astro preview",
@@ -18,12 +18,14 @@
         "@astrojs/tailwind": "^5.1.2",
         "alpinejs": "^3.14.3",
         "astro": "^4.16.18",
+        "p5": "^2.2.0",
         "swiper": "^12.1.0",
         "tailwindcss": "^3.4.17"
     },
     "devDependencies": {
         "@tailwindcss/forms": "^0.5.9",
         "@tailwindcss/typography": "^0.5.15",
-        "cross-env": "^10.1.0"
+        "cross-env": "^10.1.0",
+        "pagefind": "^1.4.0"
     }
 }

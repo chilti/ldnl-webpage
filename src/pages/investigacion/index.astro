@@ -5,26 +5,26 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 const investigacionEntries = await getCollection('investigacion');
 
 const areas = {
-  'bioinformatica': {
-    title: 'Bioinformática',
-    description: 'Algoritmos y métodos para el análisis de secuencias biológicas',
-    icon: '🧬',
-    entries: investigacionEntries.filter(e => e.data.area === 'bioinformatica')
-  },
-  'neuroinformatica': {
-    title: 'Neuroinformática',
-    description: 'Modelación matemática de neuronas y redes neuronales',
-    icon: '🧠',
-    entries: investigacionEntries.filter(e => e.data.area === 'neuroinformatica')
-  },
   'sistemas-dinamicos': {
-    title: 'Sistemas Dinámicos',
+    title: 'Ciencia Computacional',
     description: 'Análisis de sistemas no lineales y teoría del caos',
     icon: '🌀',
     entries: investigacionEntries.filter(e => e.data.area === 'sistemas-dinamicos')
   },
+  'neuroinformatica': {
+    title: 'Inteligencia Computacional',
+    description: 'Modelación matemática de neuronas y redes neuronales',
+    icon: '🧠',
+    entries: investigacionEntries.filter(e => e.data.area === 'neuroinformatica')
+  },
+  'bioinformatica': {
+    title: 'Ciencia Informática',
+    description: 'Algoritmos y métodos para el análisis de secuencias biológicas',
+    icon: '🧬',
+    entries: investigacionEntries.filter(e => e.data.area === 'bioinformatica')
+  },
   'data-science': {
-    title: 'Data Science',
+    title: 'Ciencia de la Ciencia',
     description: 'Ciencia de datos y análisis bibliométrico',
     icon: '📊',
     entries: investigacionEntries.filter(e => e.data.area === 'data-science')

@@ -1,5 +1,5 @@
 ---
-title: "Neuroinformática"
+title: "Inteligencia Computacional"
 description: "Modelación matemática de neuronas y redes neuronales"
 area: "neuroinformatica"
 image: "/images/neuroinformatica/neuron.png"

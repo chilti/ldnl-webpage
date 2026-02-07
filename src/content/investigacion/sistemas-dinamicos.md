@@ -1,5 +1,5 @@
 ---
-title: "Sistemas Dinámicos"
+title: "Ciencia Computacional"
 description: "Análisis de sistemas dinámicos no lineales y teoría del caos"
 area: "sistemas-dinamicos"
 image: "/images/generales/deslizador/dientedesierra2.png"

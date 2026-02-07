@@ -1,5 +1,5 @@
 ---
-title: "Data Science"
+title: "Ciencia de la Ciencia"
 description: "Ciencia de datos aplicada a investigación científica y análisis bibliométrico"
 area: "data-science"
 image: "/images/generales/deslizador/frontiers2.jpg"

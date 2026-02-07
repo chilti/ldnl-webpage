@@ -1,0 +1,115 @@
+---
+interface Props {
+  sketch: string; // Nombre del archivo JS del sketch (ej: 'lorenz.js')
+  containerId?: string;
+  width?: number;
+  height?: number;
+  class?: string;
+}
+
+const { 
+  sketch, 
+  containerId = `p5-container-${Math.random().toString(36).substr(2, 9)}`,
+  width,
+  height,
+  class: className 
+} = Astro.props;
+---
+
+<div id={containerId} class={`p5-canvas-container w-full h-full min-h-[400px] flex items-center justify-center bg-gray-50 dark:bg-gray-800 rounded-lg overflow-hidden ${className}`}>
+  <!-- Canvas will be injected here -->
+  <div class="loading-spinner animate-spin rounded-full h-12 w-12 border-t-2 border-b-2 border-unam-blue-500"></div>
+</div>
+
+<script define:vars={{ sketch, containerId, width, height }}>
+  // Cargar p5 dinámicamente si no está ya cargado
+  const loadP5 = async () => {
+    if (!window.p5) {
+      const p5Module = await import('p5');
+      window.p5 = p5Module.default;
+    }
+    return window.p5;
+  };
+
+  const sketches = import.meta.glob('/src/scripts/sketches/*.js');
+
+  const loadSketch = async () => {
+    try {
+      // Importar p5
+      const p5Module = await loadP5();
+      
+      // Buscar el sketch en el glob
+      const sketchPath = `/src/scripts/sketches/${sketch}`;
+      const sketchImport = sketches[sketchPath];
+      
+      if (!sketchImport) {
+        throw new Error(`Sketch ${sketch} not found at ${sketchPath}`);
+      }
+      
+      const module = await sketchImport();
+      const sketchFn = module.default;
+
+      // Crear instancia
+      new p5Module((p) => {
+        // Configurar tamaño si se pasa
+        p.setup = () => {
+             const container = document.getElementById(containerId);
+             if (!container) return;
+             
+             const w = width || container.clientWidth || 400;
+             const h = height || container.clientHeight || 400;
+             
+             // Ejecutar setup del sketch original
+             if (sketchFn) {
+                // Wrapper para inyectar p5 instance
+                // Muchos sketches definen p.setup dentro, así que llamamos a sketchFn primero
+                sketchFn(p);
+                
+                // Si el sketch no definió p.setup (raro), o para asegurar canvas
+                // Pero lo normal es que sketchFn defina p.setup y p.draw
+                // Vamos a sobreescribir p.setup para inyectar nuestro create canvas si hace falta
+                // O mejor, confiamos en que sketchFn lo haga, pero le pasamos el tamaño ideal
+                if (!p.canvas) {
+                     p.createCanvas(w, h);
+                }
+             }
+             
+             // Ocultar spinner
+             const spinner = container.querySelector('.loading-spinner');
+             if (spinner) spinner.style.display = 'none';
+        };
+
+        // window resize wrapper
+        p.windowResized = () => {
+             const container = document.getElementById(containerId);
+             if (container && !width && !height) {
+                 p.resizeCanvas(container.clientWidth, container.clientHeight);
+             }
+        };
+      }, containerId);
+
+    } catch (err) {
+      console.error("Error loading sketch:", err);
+      const container = document.getElementById(containerId);
+      if (container) {
+        container.innerHTML = `<div class="text-red-500 p-4 text-center">Error loading visualization:<br>${err.message}</div>`;
+      }
+    }
+  };
+
+  // Iniciar cuando el DOM esté listo
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', loadSketch);
+  } else {
+    loadSketch();
+  }
+</script>
+
+<style>
+  /* Asegurar que el canvas se comporte bien */
+  :global(.p5-canvas-container canvas) {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+  }
+</style>

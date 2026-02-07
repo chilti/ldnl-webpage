@@ -58,11 +58,11 @@
 			window.addEventListener('resize', resizeCanvas);
 			
 			// FitzHugh-Nagumo parameters
-			const a = 0.8;
-			const b = 0.7;
-			const tau = 3; // Reduced for faster, sharper spikes
-			const I = 0.8; // Increased for more rectangular limit cycle
-			const dt = 0.2; // Doubled for faster animation
+			const a = 0.7;
+			const b = 0.8;
+			const tau = 12.5;
+			const I = 0.5; // External current
+			const dt = 0.1;
 			
 			// Initial conditions
 			let v = -1;
@@ -70,11 +70,10 @@
 			
 			// History for phase space and time series
 			const phasePoints: {x: number, y: number}[] = [];
-			const voltageHistory: number[] = [];
+			const timePoints: {t: number, v: number}[] = [];
 			const maxPhasePoints = 500;
-			const maxVoltagePoints = 500; // Increased for very tight, compressed spikes
+			const maxTimePoints = 200;
 			let time = 0;
-			let voltageIndex = 0;
 			
 			// Animation loop
 			const animate = () => {
@@ -102,9 +101,18 @@
 					phasePoints.shift();
 				}
 				
-				// Store voltage in circular buffer
-				voltageHistory[voltageIndex] = v;
-				voltageIndex = (voltageIndex + 1) % maxVoltagePoints;
+				// Time series (right side)
+				const timeScale = 2;
+				const voltageScale = 60;
+				const timeCenterX = canvasWidth * 0.65;
+				const timeCenterY = canvasHeight / 2;
+				const tx = timeCenterX + (timePoints.length * timeScale);
+				const ty = timeCenterY - v * voltageScale;
+				
+				timePoints.push({t: tx, v: ty});
+				if (timePoints.length > maxTimePoints) {
+					timePoints.shift();
+				}
 				
 				// Clear canvas with fade effect
 				ctx.fillStyle = 'rgba(0, 61, 130, 0.05)';
@@ -131,58 +139,25 @@
 					ctx.fill();
 				}
 				
-				// Draw time series (right) - fills from left, then scrolls
-				const collectedPoints = voltageHistory.filter(v => v !== undefined).length;
-				const isFull = collectedPoints >= maxVoltagePoints;
-				
-				if (collectedPoints > 0) {
-					const timeWidth = canvasWidth * 0.3; // Width of time series plot
-					const timeStartX = canvasWidth * 0.65;
-					const timeCenterY = canvasHeight / 2;
-					const voltageScale = 40; // Adjusted for good visibility
-					const timeStep = timeWidth / maxVoltagePoints;
-					
+				// Draw time series (right)
+				if (timePoints.length > 1) {
 					ctx.beginPath();
+					ctx.moveTo(timePoints[0].t, timePoints[0].v);
 					
-					if (isFull) {
-						// Once full, scroll continuously (oscilloscope mode)
-						for (let i = 0; i < maxVoltagePoints; i++) {
-							const dataIndex = (voltageIndex + i) % maxVoltagePoints;
-							const voltage = voltageHistory[dataIndex];
-							
-							if (voltage !== undefined) {
-								const x = timeStartX + i * timeStep;
-								const y = timeCenterY - voltage * voltageScale;
-								
-								if (i === 0) {
-									ctx.moveTo(x, y);
-								} else {
-									ctx.lineTo(x, y);
-								}
-							}
-						}
-					} else {
-						// Initially, fill from left to right
-						for (let i = 0; i < collectedPoints; i++) {
-							const voltage = voltageHistory[i];
-							
-							if (voltage !== undefined) {
-								const x = timeStartX + i * timeStep;
-								const y = timeCenterY - voltage * voltageScale;
-								
-								if (i === 0) {
-									ctx.moveTo(x, y);
-								} else {
-									ctx.lineTo(x, y);
-								}
-							}
-						}
+					for (let i = 1; i < timePoints.length; i++) {
+						ctx.lineTo(timePoints[i].t, timePoints[i].v);
 					}
 					
 					ctx.strokeStyle = 'rgba(0, 0, 0, 1)';
 					ctx.lineWidth = 1.5;
 					ctx.stroke();
 				}
+				
+				// Draw labels
+				ctx.fillStyle = 'rgba(255, 255, 255, 0.7)';
+				ctx.font = '14px Arial';
+				ctx.fillText('Espacio de Estados (v, w)', canvasWidth * 0.05, 30);
+				ctx.fillText('Voltaje (v)', canvasWidth * 0.55, 30);
 				
 				requestAnimationFrame(animate);
 			};

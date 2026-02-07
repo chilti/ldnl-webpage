@@ -1,5 +1,5 @@
 ---
-title: "Bioinformática"
+title: "Ciencia Informática"
 description: "Investigación en alineamiento de secuencias múltiples y análisis bioinformático"
 area: "bioinformatica"
 image: "/images/bioinformatica/align3dL.png"
