@@ -14,39 +14,17 @@
 
       <!-- Formulario -->
       <form
-        x-data="{
-          email: '',
-          status: '',
-          message: '',
-          async submit() {
-            if (!this.email) {
-              this.status = 'error';
-              this.message = 'Por favor ingresa tu email';
-              return;
-            }
-            
-            const emailRegex = /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/;
-            if (!emailRegex.test(this.email)) {
-              this.status = 'error';
-              this.message = 'Por favor ingresa un email válido';
-              return;
-            }
-            
-            this.status = 'success';
-            this.message = '¡Gracias por suscribirte! Pronto recibirás nuestras actualizaciones.';
-            this.email = '';
-            
-            // Aquí se integrará con Mailchimp en el futuro
-          }
-        }"
-        @submit.prevent="submit()"
+        action="mailto:jlja@ciencias.unam.mx?subject=Suscripción al Newsletter LDNL&body=Hola, me gustaría suscribirme al newsletter del Laboratorio de Dinámica No Lineal.%0D%0A%0D%0AMi correo electrónico es: "
+        method="post"
+        enctype="text/plain"
         class="space-y-4"
       >
         <div class="flex flex-col sm:flex-row gap-3 max-w-xl mx-auto">
           <input
             type="email"
-            x-model="email"
+            name="email"
             placeholder="tu@email.com"
+            required
             class="flex-1 px-6 py-3 rounded-lg bg-white/10 backdrop-blur-sm border border-white/20 text-white placeholder-white/60 focus:outline-none focus:ring-2 focus:ring-white/50 focus:border-transparent"
           />
           <button
@@ -57,23 +35,9 @@
           </button>
         </div>
 
-        <!-- Mensajes de estado -->
-        <div
-          x-show="status"
-          x-transition
-          class="max-w-xl mx-auto"
-          style="display: none;"
-        >
-          <div
-            :class="{
-              'bg-green-500/20 border-green-500/50 text-green-100': status === 'success',
-              'bg-red-500/20 border-red-500/50 text-red-100': status === 'error'
-            }"
-            class="px-4 py-3 rounded-lg border backdrop-blur-sm"
-          >
-            <p x-text="message" class="text-sm"></p>
-          </div>
-        </div>
+        <p class="text-sm text-white/70">
+          Al hacer clic en "Suscribirse", se abrirá tu cliente de correo para completar la suscripción.
+        </p>
 
         <p class="text-sm text-white/70">
           No compartimos tu información. Puedes cancelar tu suscripción en cualquier momento.
