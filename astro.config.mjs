@@ -5,12 +5,10 @@ import tailwind from '@astrojs/tailwind';
 export default defineConfig({
   integrations: [tailwind()],
 
-  // Para despliegue en subdirectorio (ej: /nuevositio/)
-  // Cambia esto según tu necesidad:
-  // - Para producción en raíz: base: '/'
-  // - Para pruebas en subdirectorio: base: '/nuevositio/'
-  base: process.env.PUBLIC_BASE_PATH || '/',
+  // Configuración para despliegue en raíz del dominio
+  base: '/',
 
-  // Opcional: configurar site para SEO
-  site: 'https://tu-dominio.com',
+  // URL del sitio para SEO y sitemap
+  // Actualiza con tu dominio real
+  site: 'https://www.dynamics.unam.edu',
 });
