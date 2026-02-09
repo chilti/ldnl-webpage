@@ -1,0 +1,143 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const vinculacionEntries = await getCollection('vinculacion');
+
+// Filtrar solo las entradas que queremos mostrar
+const colaboracionAcademica = vinculacionEntries.find(e => e.slug === 'colaboracion-academica');
+const gobiernoIndustria = vinculacionEntries.find(e => e.slug === 'gobierno-industria');
+---
+
+<BaseLayout title="Vinculación" description="Colaboraciones académicas y vinculación con gobierno e industria del Laboratorio de Dinámica No Lineal">
+  <main class="min-h-screen bg-white dark:bg-gray-900">
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-r from-accent-purple-600 to-unam-gold-600 text-white py-20">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h1 class="text-4xl md:text-5xl font-display font-bold mb-6 animate-fade-in">
+            Vinculación
+          </h1>
+          <p class="text-xl text-white/90 animate-fade-in" style="animation-delay: 0.2s">
+            Colaboraciones estratégicas con instituciones académicas, gubernamentales y el sector privado.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Vinculación Cards Section -->
+    <section class="py-16">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          
+          <!-- Colaboración Académica Card -->
+          {colaboracionAcademica && (
+            <a 
+              href={`/vinculacion/${colaboracionAcademica.slug}`}
+              class="card p-8 text-center group animate-fade-in hover:shadow-2xl transition-all duration-300"
+              style="animation-delay: 0.1s"
+            >
+              <div class="mb-6">
+                <svg class="w-20 h-20 mx-auto text-unam-blue-500 dark:text-accent-cyan-500 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                </svg>
+              </div>
+              
+              <h3 class="text-2xl font-display font-bold text-gray-900 dark:text-white mb-4 group-hover:text-unam-blue-500 dark:group-hover:text-accent-cyan-500 transition-colors">
+                {colaboracionAcademica.data.title}
+              </h3>
+              
+              <p class="text-gray-600 dark:text-gray-400 mb-6 text-lg">
+                {colaboracionAcademica.data.description}
+              </p>
+              
+              <div class="flex items-center justify-center text-unam-blue-500 dark:text-accent-cyan-500 font-medium group-hover:underline">
+                Ver más
+                <svg class="w-5 h-5 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </a>
+          )}
+
+          <!-- Gobierno e Industria Card -->
+          {gobiernoIndustria && (
+            <a 
+              href={`/vinculacion/${gobiernoIndustria.slug}`}
+              class="card p-8 text-center group animate-fade-in hover:shadow-2xl transition-all duration-300"
+              style="animation-delay: 0.2s"
+            >
+              <div class="mb-6">
+                <svg class="w-20 h-20 mx-auto text-unam-blue-500 dark:text-accent-cyan-500 group-hover:scale-110 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"/>
+                </svg>
+              </div>
+              
+              <h3 class="text-2xl font-display font-bold text-gray-900 dark:text-white mb-4 group-hover:text-unam-blue-500 dark:group-hover:text-accent-cyan-500 transition-colors">
+                {gobiernoIndustria.data.title}
+              </h3>
+              
+              <p class="text-gray-600 dark:text-gray-400 mb-6 text-lg">
+                {gobiernoIndustria.data.description}
+              </p>
+              
+              <div class="flex items-center justify-center text-unam-blue-500 dark:text-accent-cyan-500 font-medium group-hover:underline">
+                Ver más
+                <svg class="w-5 h-5 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </a>
+          )}
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Info Section -->
+    <section class="py-16 bg-gray-50 dark:bg-gray-800">
+      <div class="container mx-auto px-4">
+        <div class="max-w-4xl mx-auto text-center">
+          <h2 class="text-3xl font-display font-bold text-gray-900 dark:text-white mb-6">
+            Oportunidades de Colaboración
+          </h2>
+          <p class="text-lg text-gray-600 dark:text-gray-400 mb-8">
+            El Laboratorio de Dinámica No Lineal está abierto a establecer nuevas colaboraciones con instituciones académicas, 
+            organismos gubernamentales y el sector privado en áreas de investigación aplicada, desarrollo tecnológico y 
+            transferencia de conocimiento.
+          </p>
+          <div class="grid md:grid-cols-3 gap-6 mt-12">
+            <div class="p-6">
+              <div class="w-12 h-12 mx-auto mb-4 bg-unam-blue-500/10 dark:bg-accent-cyan-500/10 rounded-full flex items-center justify-center">
+                <svg class="w-6 h-6 text-unam-blue-500 dark:text-accent-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                </svg>
+              </div>
+              <h3 class="font-bold text-gray-900 dark:text-white mb-2">Investigación Aplicada</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Proyectos de investigación con aplicaciones prácticas</p>
+            </div>
+            <div class="p-6">
+              <div class="w-12 h-12 mx-auto mb-4 bg-unam-blue-500/10 dark:bg-accent-cyan-500/10 rounded-full flex items-center justify-center">
+                <svg class="w-6 h-6 text-unam-blue-500 dark:text-accent-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+                </svg>
+              </div>
+              <h3 class="font-bold text-gray-900 dark:text-white mb-2">Desarrollo Tecnológico</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Creación de software y herramientas especializadas</p>
+            </div>
+            <div class="p-6">
+              <div class="w-12 h-12 mx-auto mb-4 bg-unam-blue-500/10 dark:bg-accent-cyan-500/10 rounded-full flex items-center justify-center">
+                <svg class="w-6 h-6 text-unam-blue-500 dark:text-accent-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"/>
+                </svg>
+              </div>
+              <h3 class="font-bold text-gray-900 dark:text-white mb-2">Asesoría Técnica</h3>
+              <p class="text-sm text-gray-600 dark:text-gray-400">Consultoría especializada en análisis de datos y sistemas</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+</BaseLayout>

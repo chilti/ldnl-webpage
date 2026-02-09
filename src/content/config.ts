@@ -74,7 +74,7 @@ const vinculacionCollection = defineCollection({
     schema: z.object({
         title: z.string(),
         description: z.string(),
-        type: z.enum(['colaboracion-academica', 'gobierno', 'conacyt']),
+        type: z.enum(['colaboracion-academica', 'gobierno', 'conacyt', 'gobierno-industria']),
         organization: z.string().optional(),
         year: z.number().optional(),
     }),

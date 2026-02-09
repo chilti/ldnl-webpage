@@ -1,230 +1,233 @@
----
+﻿---
 // Navigation component with mega-menu
 ---
 
 <nav 
-	class="bg-gradient-primary text-white relative z-40"
-	x-data="{ activeMenu: null, mobileMenuOpen: false }"
-	@toggle-mobile-menu.window="mobileMenuOpen = !mobileMenuOpen"
+class="bg-gradient-primary text-white relative z-40"
+x-data="{ activeMenu: null, mobileMenuOpen: false }"
+@toggle-mobile-menu.window="mobileMenuOpen = !mobileMenuOpen"
 >
-	<div class="container mx-auto px-4">
-		<!-- Desktop Navigation -->
-		<ul class="hidden md:flex items-center justify-center space-x-1">
-			<!-- Inicio -->
-			<li>
-				<a 
-					href="/" 
-					class="block px-4 py-4 hover:bg-white/10 transition-colors font-medium"
-				>
-					Inicio
-				</a>
-			</li>
-			
-			<!-- Integrantes -->
-			<li>
-				<a href="/integrantes" class="block px-4 py-4 hover:bg-white/10 transition-colors font-medium">
-					Integrantes
-				</a>
-			</li>
-			
-			<!-- Investigación -->
-			<li 
-				class="relative"
-				@mouseenter="activeMenu = 'investigacion'"
-				@mouseleave="activeMenu = null"
-			>
-				<button 
-					class="flex items-center gap-1 px-4 py-4 hover:bg-white/10 transition-colors font-medium"
-				>
-					Investigación
-					<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-					</svg>
-				</button>
-				
-				<div 
-					x-show="activeMenu === 'investigacion'"
-					x-transition
-					class="absolute left-0 mt-0 w-64 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-b-lg shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden z-50"
-				>
-					<a href="/investigacion/sistemas-dinamicos" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						Ciencia Computacional
-					</a>
-					<a href="/investigacion/neuroinformatica" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						Inteligencia Computacional
-					</a>
-					<a href="/investigacion/bioinformatica" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						Ciencia Informática
-					</a>
-					<a href="/investigacion/data-science" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						Ciencia de la Ciencia
-					</a>
-				</div>
-			</li>
-			
-			<!-- Docencia -->
-			<li 
-				class="relative"
-				@mouseenter="activeMenu = 'docencia'"
-				@mouseleave="activeMenu = null"
-			>
-				<button 
-					class="flex items-center gap-1 px-4 py-4 hover:bg-white/10 transition-colors font-medium"
-				>
-					Docencia
-					<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-					</svg>
-				</button>
-				
-				<div 
-					x-show="activeMenu === 'docencia'"
-					x-transition
-					class="absolute left-0 mt-0 w-64 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-b-lg shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden z-50"
-				>
-					<a href="/docencia/tesis" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						Tesis
-					</a>
-					<a href="/docencia/talleres" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						Talleres
-					</a>
-					<a href="/docencia/textos" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						Textos de Docencia
-					</a>
-					<a href="/docencia/servicio-social" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						Servicio Social
-					</a>
-				</div>
-			</li>
-			
-			<!-- Tecnología -->
-			<li 
-				class="relative"
-				@mouseenter="activeMenu = 'tecnologia'"
-				@mouseleave="activeMenu = null"
-			>
-				<button 
-					class="flex items-center gap-1 px-4 py-4 hover:bg-white/10 transition-colors font-medium"
-				>
-					Tecnología
-					<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-					</svg>
-				</button>
-				
-				<div 
-					x-show="activeMenu === 'tecnologia'"
-					x-transition
-					class="absolute left-0 mt-0 w-64 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-b-lg shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden z-50"
-				>
-					<a href="/tecnologia/integra" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						Integra
-					</a>
-					<a href="/tecnologia/circle" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						Circle
-					</a>
-					<a href="/tecnologia/fractal" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						Fractal
-					</a>
-					<a href="/tecnologia/datasomining" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						DataSOMining
-					</a>
-					<a href="/tecnologia/labsom" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						LabSOM
-					</a>
-				</div>
-			</li>
-			
-			<!-- Proyectos -->
-			<li 
-				class="relative"
-				@mouseenter="activeMenu = 'proyectos'"
-				@mouseleave="activeMenu = null"
-			>
-				<button 
-					class="flex items-center gap-1 px-4 py-4 hover:bg-white/10 transition-colors font-medium"
-				>
-					Proyectos
-					<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-					</svg>
-				</button>
-				
-				<div 
-					x-show="activeMenu === 'proyectos'"
-					x-transition
-					class="absolute left-0 mt-0 w-64 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-b-lg shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden z-50"
-				>
-					<a href="/proyectos/investigacion" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						Investigación
-					</a>
-					<a href="/proyectos/docencia" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						Docencia
-					</a>
-					<a href="/proyectos/arte-ciencia" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						Arte y Ciencia
-					</a>
-				</div>
-			</li>
-			
-			<!-- Vinculación -->
-			<li 
-				class="relative"
-				@mouseenter="activeMenu = 'vinculacion'"
-				@mouseleave="activeMenu = null"
-			>
-				<button 
-					class="flex items-center gap-1 px-4 py-4 hover:bg-white/10 transition-colors font-medium"
-				>
-					Vinculación
-					<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-					</svg>
-				</button>
-				
-				<div 
-					x-show="activeMenu === 'vinculacion'"
-					x-transition
-					class="absolute left-0 mt-0 w-64 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-b-lg shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden z-50"
-				>
-					<a href="/vinculacion/colaboracion-academica" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						Colaboración Académica
-					</a>
-					<a href="/vinculacion/gobierno" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						Gobierno
-					</a>
-					<a href="/vinculacion/conacyt" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
-						CONACYT (PEI)
-					</a>
-				</div>
-			</li>
-			
-			<!-- Blog -->
-			<li>
-				<a 
-					href="/blog" 
-					class="block px-4 py-4 hover:bg-white/10 transition-colors font-medium"
-				>
-					Blog
-				</a>
-			</li>
-		</ul>
-		
-		<!-- Mobile Navigation -->
-		<div 
-			x-show="mobileMenuOpen"
-			x-transition
-			class="md:hidden py-4"
-		>
-			<div class="space-y-2">
-				<a href="/" class="block px-4 py-2 hover:bg-white/10 rounded transition-colors">Inicio</a>
-				<a href="/investigacion" class="block px-4 py-2 hover:bg-white/10 rounded transition-colors">Investigación</a>
-				<a href="/docencia" class="block px-4 py-2 hover:bg-white/10 rounded transition-colors">Docencia</a>
-				<a href="/tecnologia" class="block px-4 py-2 hover:bg-white/10 rounded transition-colors">Tecnología</a>
-				<a href="/proyectos" class="block px-4 py-2 hover:bg-white/10 rounded transition-colors">Proyectos</a>
-				<a href="/vinculacion" class="block px-4 py-2 hover:bg-white/10 rounded transition-colors">Vinculación</a>
-				<a href="/blog" class="block px-4 py-2 hover:bg-white/10 rounded transition-colors">Blog</a>
-			</div>
-		</div>
-	</div>
+<div class="container mx-auto px-4">
+<!-- Desktop Navigation -->
+<ul class="hidden md:flex items-center justify-center space-x-1">
+<!-- Inicio -->
+<li>
+<a 
+href="/" 
+class="block px-4 py-4 hover:bg-white/10 transition-colors font-medium"
+>
+Inicio
+</a>
+</li>
+
+<!-- Integrantes -->
+<li>
+<a href="/integrantes" class="block px-4 py-4 hover:bg-white/10 transition-colors font-medium">
+Integrantes
+</a>
+</li>
+
+<!-- Investigación -->
+<li 
+class="relative"
+@mouseenter="activeMenu = 'investigacion'"
+@mouseleave="activeMenu = null"
+>
+<a 
+href="/investigacion"
+class="flex items-center gap-1 px-4 py-4 hover:bg-white/10 transition-colors font-medium"
+>
+Investigación
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+</svg>
+</a>
+
+<div 
+x-show="activeMenu === 'investigacion'"
+x-transition
+class="absolute left-0 mt-0 w-64 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-b-lg shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden z-50"
+>
+<a href="/investigacion/sistemas-dinamicos" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+Ciencia Computacional
+</a>
+<a href="/investigacion/neuroinformatica" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+Inteligencia Computacional
+</a>
+<a href="/investigacion/bioinformatica" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+Ciencia Informática
+</a>
+<a href="/investigacion/data-science" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+Ciencia de la Ciencia
+</a>
+</div>
+</li>
+
+<!-- Docencia -->
+<li 
+class="relative"
+@mouseenter="activeMenu = 'docencia'"
+@mouseleave="activeMenu = null"
+>
+<a 
+href="/docencia"
+class="flex items-center gap-1 px-4 py-4 hover:bg-white/10 transition-colors font-medium"
+>
+Docencia
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+</svg>
+</a>
+
+<div 
+x-show="activeMenu === 'docencia'"
+x-transition
+class="absolute left-0 mt-0 w-64 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-b-lg shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden z-50"
+>
+<a href="/docencia/tesis" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+Tesis
+</a>
+<a href="/docencia/talleres" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+Talleres
+</a>
+<a href="/docencia/textos" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+Textos de Docencia
+</a>
+<a href="/docencia/servicio-social" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+Servicio Social
+</a>
+</div>
+</li>
+
+<!-- Tecnología -->
+<li 
+class="relative"
+@mouseenter="activeMenu = 'tecnologia'"
+@mouseleave="activeMenu = null"
+>
+<a 
+href="/tecnologia"
+class="flex items-center gap-1 px-4 py-4 hover:bg-white/10 transition-colors font-medium"
+>
+Tecnología
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+</svg>
+</a>
+
+<div 
+x-show="activeMenu === 'tecnologia'"
+x-transition
+class="absolute left-0 mt-0 w-64 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-b-lg shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden z-50"
+>
+<a href="/tecnologia/integra" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+Integra
+</a>
+<a href="/tecnologia/circle" class="block px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+Circle
+</a>
+<a href="/tecnologia/fractal" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+Fractal
+</a>
+<a href="/tecnologia/datasomining" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+DataSOMining
+</a>
+<a href="/tecnologia/labsom" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+LabSOM
+</a>
+</div>
+</li>
+
+<!-- Proyectos -->
+<li 
+class="relative"
+@mouseenter="activeMenu = 'proyectos'"
+@mouseleave="activeMenu = null"
+>
+<a 
+href="/proyectos"
+class="flex items-center gap-1 px-4 py-4 hover:bg-white/10 transition-colors font-medium"
+>
+Proyectos
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+</svg>
+</a>
+
+<div 
+x-show="activeMenu === 'proyectos'"
+x-transition
+class="absolute left-0 mt-0 w-64 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-b-lg shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden z-50"
+>
+<a href="/proyectos/investigacion" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+Investigación
+</a>
+<a href="/proyectos/docencia" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+Docencia
+</a>
+<a href="/proyectos/arte-ciencia" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+Arte y Ciencia
+</a>
+</div>
+</li>
+
+<!-- Vinculación -->
+<li 
+class="relative"
+@mouseenter="activeMenu = 'vinculacion'"
+@mouseleave="activeMenu = null"
+>
+<a 
+href="/vinculacion"
+class="flex items-center gap-1 px-4 py-4 hover:bg-white/10 transition-colors font-medium"
+>
+Vinculación
+<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+</svg>
+</a>
+
+<div 
+x-show="activeMenu === 'vinculacion'"
+x-transition
+class="absolute left-0 mt-0 w-64 bg-white dark:bg-gray-800 text-gray-900 dark:text-gray-100 rounded-b-lg shadow-xl border border-gray-200 dark:border-gray-700 overflow-hidden z-50"
+>
+<a href="/vinculacion/colaboracion-academica" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+Colaboración Académica
+</a>
+<a href="/vinculacion/gobierno-industria" class="block px-4 py-3 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors">
+Gobierno e Industria
+</a>
+</div>
+</li>
+
+<!-- Blog -->
+<li>
+<a 
+href="/blog" 
+class="block px-4 py-4 hover:bg-white/10 transition-colors font-medium"
+>
+Blog
+</a>
+</li>
+</ul>
+
+<!-- Mobile Navigation -->
+<div 
+x-show="mobileMenuOpen"
+x-transition
+class="md:hidden py-4"
+>
+<div class="space-y-2">
+<a href="/" class="block px-4 py-2 hover:bg-white/10 rounded transition-colors">Inicio</a>
+<a href="/integrantes" class="block px-4 py-2 hover:bg-white/10 rounded transition-colors">Integrantes</a>
+<a href="/investigacion" class="block px-4 py-2 hover:bg-white/10 rounded transition-colors">Investigación</a>
+<a href="/docencia" class="block px-4 py-2 hover:bg-white/10 rounded transition-colors">Docencia</a>
+<a href="/tecnologia" class="block px-4 py-2 hover:bg-white/10 rounded transition-colors">Tecnología</a>
+<a href="/proyectos" class="block px-4 py-2 hover:bg-white/10 rounded transition-colors">Proyectos</a>
+<a href="/vinculacion" class="block px-4 py-2 hover:bg-white/10 rounded transition-colors">Vinculación</a>
+<a href="/blog" class="block px-4 py-2 hover:bg-white/10 rounded transition-colors">Blog</a>
+</div>
+</div>
+</div>
 </nav>

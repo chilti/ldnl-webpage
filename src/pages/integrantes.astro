@@ -25,18 +25,37 @@ const responsable = {
 	]
 };
 
-// Técnico Académico
-const tecnico = {
-	name: "Dr. José Luis Jiménez Andrade",
-	photo: "/images/estudiantes/jlja2.png",
-	position: "Técnico Académico",
-	titles: "Técnico Asociado C, PRIDE D, SNII I",
-	education: [
-		"Doctor en Ciencia de Datos, INFOTEC",
-		"Maestría en Inteligencia Artificial, Departamento de Inteligencia Artificial, Universidad Veracruzana",
-		"Ingeniería Mecánica Eléctrica, Facultad de Ingeniería Mecánica Eléctrica, Universidad Veracruzana"
-	]
-};
+// Técnicos Académicos
+const tecnicos = [
+	{
+		name: "Dr. José Luis Jiménez Andrade",
+		photo: "/images/estudiantes/jlja2.png",
+		position: "Técnico Académico",
+		department: "Departamento de Matemáticas, Facultad de Ciencias, UNAM",
+		titles: "Técnico Asociado C, PRIDE D, SNII I",
+		education: [
+			"Doctor en Ciencia de Datos, INFOTEC",
+			"Maestría en Inteligencia Artificial, Departamento de Inteligencia Artificial, Universidad Veracruzana",
+			"Ingeniería Mecánica Eléctrica, Facultad de Ingeniería Mecánica Eléctrica, Universidad Veracruzana"
+		]
+	},
+	{
+		name: "M. en C. Mayelin Mirabal Sosa",
+		photo: "https://sigi.nucleares.unam.mx/sgiicn/images/pictures/9ca58146090f23063de413396534d837.png",
+		position: "Técnica Académica",
+		department: "Unidad de Información y Biblioteca Marcos Rosenbaum, Instituto de Ciencias Nucleares, UNAM",
+		titles: "",
+		education: []
+	},
+	{
+		name: "M. en C. Romel Calero Ramos",
+		photo: "https://www.c3.unam.mx/image/directorioC3/Unidad_apoyo/Romel-Calero.png",
+		position: "Técnico Académico",
+		department: "Unidad de ciencias de los datos y cómputo, Centro de Ciencias de la Complejidad, UNAM",
+		titles: "",
+		education: []
+	}
+];
 
 // Coautores
 const coautores = [
@@ -63,14 +82,28 @@ const coautores = [
 		url: "http://www.ncbi.nlm.nih.gov/CBBresearch/Lipman/"
 	},
 	{
-		name: "Ricardo Arencibia Jorge",
+		name: "Frank C Hoppensteadt",
+		photo: "https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=ic6c45MAAAAJ&citpid=5",
+		affiliation: "Professor Emeritus of Mathematics, Courant Institute of Mathematical Sciences, New York University",
+		url: "https://scholar.google.com/citations?hl=en&user=ic6c45MAAAAJ&view_op=list_works&sortby=pubdate"
+	},
+	{
+		name: "Dr. Nicandro Cruz Ramírez",
+		photo: "https://www.uv.mx/mia/files/2012/10/Foto-Nick-red.jpg",
+		affiliation: "Investigador de la Universidad Veracruzana",
+		url: "https://scholar.google.com/citations?user=9iGg30cAAAAJ&hl=es"
+	},
+	{
+		name: "Dr. Ricardo Arencibia Jorge",
+		photo: "https://scholar.googleusercontent.com/citations?view_op=medium_photo&user=krJTaKIAAAAJ&citpid=3",
 		affiliation: "UNAM, Centro de Ciencias de la Complejidad C3, México",
 		url: "https://scholar.google.com/citations?user=krJTaKIAAAAJ&hl=es"
 	},
 	{
 		name: "Dra. María Victoria Guzmán Sánchez",
+		photo: "https://scholar.googleusercontent.com/citations?view_op=view_photo&user=V6meT00AAAAJ&citpid=4",
 		affiliation: "Facultad de Ciencias, Universidad Nacional Autónoma de México, UNAM",
-		url: "https://scholar.google.com/citations?user=V6meT00AAAAJ&hl=es"
+		url: "https://scholar.google.com.mx/citations?user=V6meT00AAAAJ&hl=es"
 	},
 	{
 		name: "José Luis Jiménez Andrade",
@@ -86,11 +119,6 @@ const coautores = [
 		name: "Raudel Giraldez Reyes",
 		affiliation: "Universidad de Pinar del Río 'Hermanos Saíz Montes de Oca'",
 		url: "https://scholar.google.com/citations?user=L19w0swAAAAJ&hl=es"
-	},
-	{
-		name: "Nicandro Cruz Ramírez",
-		affiliation: "Investigador de la Universidad Veracruzana",
-		url: "https://scholar.google.com/citations?user=9iGg30cAAAAJ&hl=es"
 	},
 	{
 		name: "Hector Gabriel Acosta Mesa",
@@ -133,11 +161,6 @@ const coautores = [
 		url: "https://scholar.google.com/citations?user=NXnvFhMAAAAJ&hl=es"
 	},
 	{
-		name: "Frank C Hoppensteadt",
-		affiliation: "Professor Emeritus of Mathematics, Courant Institute of Mathematical Sciences, New York University",
-		url: "https://scholar.google.com/citations?user=ic6c45MAAAAJ&hl=es"
-	},
-	{
 		name: "Zaida Chinchilla-Rodríguez",
 		affiliation: "CSIC, Institute of Public Goods and Policies (IPP), Spain",
 		url: "https://scholar.google.com/citations?user=eI_07rMAAAAJ&hl=es"
@@ -164,7 +187,7 @@ const coautores = [
 	}
 ];
 
-// Estudiantes de Doctorado
+// Estudiantes de Doctorado (Graduados)
 const doctorado = [
 	{
 		name: "Dra. Ibis Anette Lozano Díaz",
@@ -172,9 +195,14 @@ const doctorado = [
 		program: "Posgrado en Bibliotecología y Estudios de la Información, UNAM"
 	},
 	{
+		name: "Dr. José Luis Jiménez Andrade",
+		photo: "/images/estudiantes/jlja2.png",
+		program: "Posgrado Ciencia de Datos, INFOTEC"
+	},
+	{
 		name: "Dr. Elio A. Villaseñor García",
 		photo: "/images/estudiantes/elio_atenogenes_villasenor_garcia.jpg",
-		program: "Infotec, UNAM"
+		program: "Doctorado en Ciencias de la Computación, UNAM"
 	},
 	{
 		name: "Dra. Yaniris Rodríguez Sánchez",
@@ -310,6 +338,40 @@ const licenciatura = [
 		program: "Matemáticas, Facultad de Ciencias, UNAM"
 	}
 ];
+
+// Estudiantes Actuales
+const estudiantesActualesDoctorado = [
+	{
+		name: "M. en C. Mayelin Mirabal Sosa",
+		photo: "https://sigi.nucleares.unam.mx/sgiicn/images/pictures/9ca58146090f23063de413396534d837.png",
+		program: "Doctorado"
+	},
+	{
+		name: "M. en C. Romel Calero Ramos",
+		photo: "https://www.c3.unam.mx/image/directorioC3/Unidad_apoyo/Romel-Calero.png",
+		program: "Doctorado"
+	}
+];
+
+const estudiantesActualesLicenciatura = [
+	{
+		name: "Ana Valeria Deloya Andrade",
+		photo: "/images/estudiantes/descarga.png",
+		program: "Ciencias de la Computación, Facultad de Ciencias, UNAM"
+	},
+	{
+		name: "Ángel Padilla Delgado",
+		photo: "/images/estudiantes/descarga.png",
+		program: "Matemáticas, Facultad de Ciencias, UNAM",
+		url: "https://www.fciencias.unam.mx/directorio/74204"
+	},
+	{
+		name: "Gabriel Garibay Cangas",
+		photo: "https://i1.rgstatic.net/ii/profile.image/1073905083105280-1633050332768_Q128/Gabriel-Garibay-Cangas.jpg",
+		program: "Matemáticas, Facultad de Ciencias, UNAM",
+		url: "https://www.fciencias.unam.mx/directorio/76930"
+	}
+];
 ---
 
 <BaseLayout title={pageTitle} description={pageDescription}>
@@ -373,33 +435,35 @@ const licenciatura = [
 		</div>
 	</section>
 
-	<!-- Técnico Académico Section -->
+	<!-- Técnicos Académicos Section -->
 	<section class="py-16 bg-gray-50 dark:bg-gray-800/50">
 		<div class="container mx-auto px-4">
-			<h2 class="text-3xl font-display font-bold text-gray-900 dark:text-white mb-8">Técnico Académico</h2>
+			<h2 class="text-3xl font-display font-bold text-gray-900 dark:text-white mb-8">Técnicos Académicos</h2>
 			
-			<div class="bg-white dark:bg-gray-900 rounded-lg p-8 shadow-lg">
-				<div class="flex flex-col md:flex-row gap-8">
-					<div class="md:w-1/3">
+			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+				{tecnicos.map(tecnico => (
+					<div class="bg-white dark:bg-gray-900 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
 						<img 
 							src={tecnico.photo} 
 							alt={tecnico.name}
-							class="w-full rounded-lg shadow-md"
+							class="w-32 h-32 rounded-full mx-auto mb-4 object-cover"
 						/>
+						<h3 class="text-lg font-semibold text-gray-900 dark:text-white text-center mb-2">
+							{tecnico.name}
+						</h3>
+						<p class="text-sm text-unam-blue dark:text-unam-gold-300 text-center mb-2">
+							{tecnico.position}
+						</p>
+						{tecnico.titles && (
+							<p class="text-xs text-gray-700 dark:text-gray-300 text-center mb-2">{tecnico.titles}</p>
+						)}
+						{tecnico.department && (
+							<p class="text-xs text-gray-600 dark:text-gray-400 text-center">
+								{tecnico.department}
+							</p>
+						)}
 					</div>
-					<div class="md:w-2/3">
-						<h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">{tecnico.name}</h3>
-						<p class="text-lg text-unam-blue dark:text-unam-gold-300 mb-2">{tecnico.position}</p>
-						<p class="text-md text-gray-700 dark:text-gray-300 mb-6">{tecnico.titles}</p>
-						
-						<div>
-							<h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Formación Académica:</h4>
-							<ul class="list-disc list-inside space-y-1 text-gray-600 dark:text-gray-400">
-								{tecnico.education.map(edu => <li>{edu}</li>)}
-							</ul>
-						</div>
-					</div>
-				</div>
+				))}
 			</div>
 		</div>
 	</section>
@@ -410,7 +474,7 @@ const licenciatura = [
 			<h2 class="text-3xl font-display font-bold text-gray-900 dark:text-white mb-8">Coautores Principales</h2>
 			
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
-				{coautores.slice(0, 4).map(coautor => (
+				{coautores.slice(0, 8).map(coautor => (
 					<div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow-lg hover:shadow-xl transition-shadow">
 						<img 
 							src={coautor.photo} 
@@ -439,7 +503,7 @@ const licenciatura = [
 
 			<h3 class="text-2xl font-display font-bold text-gray-900 dark:text-white mb-6">Colaboradores Adicionales</h3>
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-				{coautores.slice(4).map(coautor => (
+				{coautores.slice(8).map(coautor => (
 					<div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 shadow hover:shadow-md transition-shadow">
 						{coautor.url ? (
 							<a href={coautor.url} target="_blank" rel="noopener noreferrer">
@@ -463,8 +527,71 @@ const licenciatura = [
 		</div>
 	</section>
 
-	<!-- Estudiantes Section -->
+	<!-- Estudiantes Actuales Section -->
 	<section class="py-16 bg-white dark:bg-gray-900">
+		<div class="container mx-auto px-4">
+			<h2 class="text-3xl font-display font-bold text-gray-900 dark:text-white mb-12">Estudiantes Actuales</h2>
+			
+			<!-- Doctorado Actuales -->
+			<div class="mb-16">
+				<h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 border-b-2 border-unam-blue dark:border-unam-gold-300 pb-2">
+					Doctorado
+				</h3>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+					{estudiantesActualesDoctorado.map(student => (
+						<div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow hover:shadow-lg transition-shadow">
+							<img 
+								src={student.photo} 
+								alt={student.name}
+								class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+							/>
+							<h4 class="text-lg font-semibold text-gray-900 dark:text-white text-center mb-2">
+								{student.name}
+							</h4>
+							<p class="text-sm text-gray-600 dark:text-gray-400 text-center">
+								{student.program}
+							</p>
+						</div>
+					))}
+				</div>
+			</div>
+
+			<!-- Licenciatura Actuales -->
+			<div>
+				<h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 border-b-2 border-unam-blue dark:border-unam-gold-300 pb-2">
+					Licenciatura
+				</h3>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+					{estudiantesActualesLicenciatura.map(student => (
+						<div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4 shadow hover:shadow-lg transition-shadow">
+							<img 
+								src={student.photo} 
+								alt={student.name}
+								class="w-20 h-20 rounded-full mx-auto mb-3 object-cover"
+							/>
+							{student.url ? (
+								<a href={student.url} target="_blank" rel="noopener noreferrer">
+									<h4 class="text-base font-semibold text-unam-blue dark:text-unam-gold-300 hover:underline text-center mb-2">
+										{student.name}
+									</h4>
+								</a>
+							) : (
+								<h4 class="text-base font-semibold text-gray-900 dark:text-white text-center mb-2">
+									{student.name}
+								</h4>
+							)}
+							<p class="text-xs text-gray-600 dark:text-gray-400 text-center">
+								{student.program}
+							</p>
+						</div>
+					))}
+				</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Estudiantes Graduados Section -->
+	<section class="py-16 bg-gray-50 dark:bg-gray-800/50">
 		<div class="container mx-auto px-4">
 			<h2 class="text-3xl font-display font-bold text-gray-900 dark:text-white mb-12">Estudiantes Graduados</h2>
 			
