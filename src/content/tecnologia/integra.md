@@ -1,57 +1,56 @@
 ---
 title: "INTEGRA"
-description: "Software para integración numérica y análisis de bifurcaciones en sistemas dinámicos"
+description: "Software educativo para el estudio de sistemas dinámicos continuos y discretos"
 version: "3.0"
-downloadUrl: "/downloads/integra-3.0.zip"
-screenshots:
-  - "/images/integra/screenshot1.png"
-  - "/images/integra/screenshot2.png"
-features:
-  - "Integración numérica de ecuaciones diferenciales"
-  - "Análisis de bifurcaciones"
-  - "Visualización 2D y 3D"
-  - "Exportación de datos"
-  - "Interfaz gráfica intuitiva"
+downloadUrl: "https://doi.org/10.13140/RG.2.2.24631.80800"
+platforms: ["DOS", "Windows"]
+courses: ["Ecuaciones Diferenciales I", "Ecuaciones Diferenciales II"]
 category: "software"
+registration: "03-2001-022312015900-01"
 ---
 
-## INTEGRA - Software de Análisis de Sistemas Dinámicos
+## INTEGRA - Software para Sistemas Dinámicos
 
-INTEGRA es una herramienta de software desarrollada en el Laboratorio de Dinámica No Lineal para el análisis de sistemas dinámicos no lineales. Permite la integración numérica de ecuaciones diferenciales y el análisis de bifurcaciones.
+**INTEGRA** es un software educativo desarrollado en el Laboratorio de Dinámica No Lineal para el estudio de sistemas dinámicos continuos.
+
+### Descripción
+
+INTEGRA permite a estudiantes e investigadores explorar el comportamiento de sistemas dinámicos mediante integración numérica y visualización de trayectorias. Es una herramienta fundamental para comprender conceptos de ecuaciones diferenciales y teoría de sistemas dinámicos.
 
 ### Características Principales
 
 - **Integración Numérica**: Implementa diversos métodos numéricos para resolver ecuaciones diferenciales ordinarias
-- **Análisis de Bifurcaciones**: Herramientas para detectar y analizar bifurcaciones en sistemas dinámicos
-- **Visualización Avanzada**: Gráficos 2D y 3D de trayectorias, retratos de fase y diagramas de bifurcación
-- **Exportación de Datos**: Guarda resultados en formatos estándar para análisis posterior
-- **Interfaz Intuitiva**: Diseño amigable que facilita el uso para estudiantes e investigadores
+- **Visualización de Trayectorias**: Gráficos 2D y 3D de retratos de fase
+- **Análisis Cualitativo**: Herramientas para estudiar estabilidad y comportamiento asintótico
+- **Interfaz Educativa**: Diseño orientado al aprendizaje y la experimentación
 
-### Aplicaciones
+### Plataformas
 
-INTEGRA ha sido utilizado en:
+- DOS (primera versión, https://zenodo.org/records/17281372)
+- Unix (segunda versión,https://doi.org/10.5281/zenodo.17259848)
+- Windows (tercera versión, https://zenodo.org/records/17259850)
 
-- Investigación en sistemas dinámicos no lineales
-- Enseñanza de ecuaciones diferenciales
-- Análisis de modelos matemáticos en biología y física
-- Estudios de teoría del caos
+### Aplicaciones Académicas
 
-### Requisitos del Sistema
+INTEGRA se utiliza en los siguientes cursos:
 
-- Sistema operativo: Windows, Linux, macOS
-- Memoria RAM: 2 GB mínimo
-- Espacio en disco: 100 MB
+- **Ecuaciones Diferenciales I**: Introducción a métodos numéricos y visualización de soluciones
+- **Ecuaciones Diferenciales II**: Análisis avanzado de sistemas dinámicos no lineales
 
-### Descargas
+### Registro
 
-**Versión actual**: 3.0
+**Registros INDAUTOR**: 16234, 16235, 167026.
 
-[Descargar INTEGRA 3.0](/downloads/integra-3.0.zip)
+### Descarga
+
+Puedes descargar INTEGRA desde el siguiente enlace:
+
+**[Descargar INTEGRA](https://doi.org/10.5281/zenodo.17259850)**
 
 ### Documentación
 
-Para más información sobre el uso de INTEGRA, consulta la documentación incluida en el paquete de descarga.
+La documentación completa está incluida en el paquete de descarga.
 
 ### Soporte
 
-Para reportar problemas o solicitar nuevas características, contacta al laboratorio.
+Para reportar problemas o solicitar información adicional, contacta al Laboratorio de Dinámica No Lineal.

@@ -1,72 +1,52 @@
 ---
-title: "Circle"
-description: "Herramienta para el estudio del mapeo del círculo y sistemas dinámicos discretos"
-version: "2.0"
-downloadUrl: "/downloads/circle-2.0.zip"
-screenshots:
-  - "/images/circle/imagen1.png"
-  - "/images/circle/imagen2.png"
-  - "/images/circle/imagen3.png"
-  - "/images/circle/imagen4.png"
-  - "/images/circle/imagen5.png"
-features:
-  - "Visualización del mapeo del círculo"
-  - "Análisis de número de rotación"
-  - "Detección de órbitas periódicas"
-  - "Diagramas de bifurcación"
-  - "Animaciones interactivas"
+title: "CÍRCULO"
+description: "Software educativo para el estudio de sistemas dinámicos en la circunferencia"
+version: "1.0"
+downloadUrl: "https://doi.org/10.5281/zenodo.17259840"
+platforms: ["WINDOWS"]
+courses: ["Ecuaciones Diferenciales I", "Ecuaciones Diferenciales II"]
 category: "software"
+registration: "03-2003-030711171000-01 "
 ---
 
-## Circle - Mapeo del Círculo
+## CÍRCULO - Sistemas Dinámicos en la Circunferencia
 
-Circle es una herramienta especializada para el estudio del mapeo del círculo, un sistema dinámico fundamental en la teoría de sistemas dinámicos discretos.
+**CÍRCULO** es un software educativo especializado en el estudio de sistemas dinámicos definidos en la circunferencia, desarrollado en el Laboratorio de Dinámica No Lineal.
 
-### ¿Qué es el Mapeo del Círculo?
+### Descripción
 
-El mapeo del círculo es una transformación del círculo en sí mismo, definida por:
-
-θ_{n+1} = θ_n + Ω + K sin(2πθ_n) (mod 1)
-
-Donde:
-- Ω es el número de rotación
-- K es el parámetro de no linealidad
+CÍRCULO permite explorar las propiedades únicas de los sistemas dinámicos en espacios topológicos circulares, donde las condiciones de frontera periódicas generan comportamientos dinámicos especiales.
 
 ### Características Principales
 
-- **Visualización Interactiva**: Observa cómo evoluciona el mapeo en tiempo real
-- **Número de Rotación**: Calcula y visualiza el número de rotación para diferentes parámetros
-- **Órbitas Periódicas**: Detecta y muestra órbitas periódicas
-- **Diagramas de Bifurcación**: Genera diagramas que muestran la transición entre diferentes comportamientos
-- **Animaciones**: Crea animaciones del mapeo para presentaciones y enseñanza
+- **Sistemas en S¹**: Análisis de dinámicas en la circunferencia
+- **Visualización Circular**: Representación gráfica adaptada a la topología circular
+- **Número de Rotación**: Cálculo y visualización del número de rotación
+- **Órbitas Periódicas**: Identificación de ciclos y órbitas cerradas
+- **Análisis de Estabilidad**: Estudio de puntos fijos y su estabilidad
 
-### Aplicaciones Educativas
+### Plataformas
 
-Circle es una herramienta excelente para:
+- DOS
 
-- Cursos de sistemas dinámicos
-- Introducción a la teoría del caos
-- Visualización de conceptos matemáticos abstractos
-- Proyectos de investigación en dinámica discreta
+### Aplicaciones Académicas
 
-### Interfaz
+CÍRCULO se utiliza en los siguientes cursos:
 
-La interfaz de Circle permite:
+- **Ecuaciones Diferenciales I**: Introducción a sistemas en espacios topológicos
+- **Ecuaciones Diferenciales II**: Análisis avanzado de sistemas en la circunferencia
 
-1. Ajustar parámetros Ω y K con sliders
-2. Visualizar el círculo y las iteraciones
-3. Graficar el número de rotación vs parámetros
-4. Exportar imágenes y datos
+### Registro
 
-### Descargas
+**Registro INDAUTOR**: 03-2003-030711171000-01 
 
-**Versión actual**: 2.0
+### Descarga
 
-[Descargar Circle 2.0](/downloads/circle-2.0.zip)
+Puedes descargar CÍRCULO desde el siguiente enlace:
 
-### Referencias
+**[Descargar CÍRCULO](https://doi.org/10.5281/zenodo.17259840 )**
 
-El mapeo del círculo ha sido estudiado extensamente en la literatura de sistemas dinámicos. Para más información, consulta:
+### Documentación
 
-- Arnold, V. I. (1965). "Small denominators. I. Mapping the circle onto itself"
-- Herman, M. R. (1979). "Sur la conjugaison différentiable des difféomorphismes du cercle"
+La documentación completa está incluida en el paquete de descarga.
+

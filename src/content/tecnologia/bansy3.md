@@ -1,102 +1,57 @@
 ---
-title: "Bansy 3"
-description: "Sistema de análisis de series temporales y señales biológicas"
+title: "BANSY3"
+description: "Herramienta para la enseñanza de redes Bayesianas y su aplicación a la minería de datos"
 version: "3.0"
-downloadUrl: "/downloads/bansy3-3.0.zip"
-screenshots:
-  - "/images/bansy3/screenshot1.png"
-  - "/images/bansy3/screenshot2.png"
-features:
-  - "Análisis de series temporales"
-  - "Procesamiento de señales biológicas"
-  - "Análisis espectral"
-  - "Detección de patrones"
-  - "Filtrado de señales"
+downloadUrl: "https://doi.org/10.5281/zenodo.17259844"
+platforms: ["Java"]
+courses: ["Minería de Datos"]
 category: "software"
+registration: "03-2007-011711214800-01"
 ---
 
-## Bansy 3 - Análisis de Series Temporales
+## BANSY3 - Software para el Aprendizaje de Redes Bayesianas
 
-Bansy 3 es un sistema completo para el análisis de series temporales y señales biológicas, con énfasis en señales neuronales y fisiológicas.
+**BANSY3** es una herramienta educativa para la enseñanza de redes Bayesianas y su aplicación a la minería de datos, desarrollada en el Laboratorio de Dinámica No Lineal.
+
+### Descripción
+
+BANSY3 es un sistema diseñado para facilitar el aprendizaje de redes Bayesianas, una técnica fundamental en inteligencia artificial y minería de datos. Permite a los estudiantes comprender los conceptos teóricos mediante experimentación práctica con diferentes algoritmos y conjuntos de datos.
 
 ### Características Principales
 
-- **Análisis Temporal**: Estadísticas descriptivas, autocorrelación, tendencias
-- **Análisis Espectral**: FFT, periodogramas, espectrogramas
-- **Análisis No Lineal**: Dimensión de correlación, exponentes de Lyapunov
-- **Detección de Eventos**: Identificación automática de picos y patrones
-- **Filtrado**: Filtros digitales (pasa-bajas, pasa-altas, pasa-banda)
+- **Algoritmos de Aprendizaje**: Implementa varios algoritmos para el aprendizaje de la topología de redes Bayesianas
+- **Evaluación de Clasificación**: Permite evaluar las capacidades de clasificación mediante Hold-Out y Cross-Validation
+- **Interfaz Educativa**: Diseñada específicamente para facilitar el aprendizaje
+- **Visualización de Redes**: Representación gráfica de la estructura de las redes Bayesianas
+- **Análisis de Probabilidades**: Cálculo y visualización de probabilidades condicionales
+- **Datasets de Ejemplo**: Incluye conjuntos de datos para experimentación
 
-### Aplicaciones
+### Plataformas
 
-Bansy 3 ha sido utilizado en:
+- Java (multiplataforma)
 
-- **Neurociencia**: Análisis de potenciales de acción y EEG
-- **Cardiología**: Análisis de señales ECG
-- **Fisiología**: Estudio de ritmos biológicos
-- **Sistemas Dinámicos**: Caracterización de series temporales caóticas
+### Aplicaciones Académicas
 
-### Módulos
+BANSY3 se utiliza en los siguientes cursos:
 
-#### Módulo de Preprocesamiento
+- **Minería de Datos**: Aprendizaje de redes Bayesianas y clasificación
+- **Inteligencia Artificial**: Razonamiento probabilístico
 
-- Eliminación de tendencias
-- Normalización
-- Interpolación de valores faltantes
-- Detección de outliers
+### Registro
 
-#### Módulo de Análisis
+**Registro INDAUTOR**: 03-2007-011711214800-01
 
-- Estadísticas descriptivas
-- Análisis de Fourier
-- Wavelets
-- Análisis de fase
+### Descarga
 
-#### Módulo de Visualización
+Puedes descargar BANSY3 desde los siguientes enlaces:
 
-- Gráficas de series temporales
-- Espectrogramas
-- Retratos de fase
-- Mapas de Poincaré
+**[Descargar BANSY3](https://doi.org/10.5281/zenodo.17259844)**
 
-### Formatos Soportados
-
-Bansy 3 puede importar datos de:
-
-- Archivos de texto (CSV, TXT)
-- Formatos de laboratorio (EDF, BDF)
-- MATLAB (.mat)
-- Excel
-
-### Interfaz
-
-La interfaz de Bansy 3 está organizada en:
-
-1. **Explorador de Datos**: Navegación por archivos y señales
-2. **Área de Trabajo**: Visualización y análisis
-3. **Panel de Herramientas**: Acceso rápido a funciones
-4. **Consola de Resultados**: Estadísticas y reportes
-
-### Descargas
-
-**Versión actual**: 3.0
-
-[Descargar Bansy 3.0](/downloads/bansy3-3.0.zip)
 
 ### Documentación
 
-- Manual de usuario completo
-- Tutoriales en video
-- Ejemplos de análisis
-- Referencia de funciones
+La documentación completa está incluida en el paquete de descarga.
 
-### Publicaciones
+### Soporte
 
-Bansy ha sido utilizado en investigaciones publicadas en revistas especializadas. Consulta nuestra sección de [publicaciones](/publicaciones) para más detalles.
-
-### Requisitos del Sistema
-
-- Sistema operativo: Windows 7 o superior
-- Procesador: 2 GHz o superior
-- Memoria RAM: 4 GB mínimo (8 GB recomendado)
-- Espacio en disco: 500 MB
+Para reportar problemas o solicitar información adicional, contacta al Laboratorio de Dinámica No Lineal.

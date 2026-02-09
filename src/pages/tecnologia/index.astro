@@ -4,15 +4,17 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 
 const tecnologiaEntries = await getCollection('tecnologia');
 
+// Software educativo con páginas dedicadas
+const educationalSoftwareWithPages = [
+  { slug: 'integra', hasPage: true },
+  { slug: 'circle', hasPage: true },
+  { slug: 'fractal', hasPage: true },
+  { slug: 'labsom', hasPage: true },
+  { slug: 'bansy3', hasPage: true }
+];
+
 // Software educativo adicional (sin páginas dedicadas aún)
 const additionalEducationalSoftware = [
-  {
-    title: "INTEGRA",
-    description: "Sistema de software útil para el estudio de los sistemas dinámicos. Permite analizar visual e interactivamente el comportamiento de sistemas dinámicos modelados por ecuaciones diferenciales ordinarias o en diferencias.",
-    platforms: "DOS, UNIX, Windows",
-    courses: "Cálculo y Ecuaciones Diferenciales",
-    doi: "https://doi.org/10.5281/zenodo.17259846"
-  },
   {
     title: "DIENTE DE SIERRA",
     description: "Sistema que permite analizar osciladores no lineales modelados por métodos geométricos. Los despliegues gráficos se basan en el cálculo de las iteraciones de las funciones que determinan las fases de disparo.",
@@ -28,32 +30,11 @@ const additionalEducationalSoftware = [
     doi: "https://doi.org/10.5281/zenodo.17259852"
   },
   {
-    title: "FRACTAL",
-    description: "Sistema para la enseñanza de la teoría matemática de los conjuntos fractales. Permite analizar visual e interactivamente sistemas dinámicos mediante iteración de funciones del plano, incluyendo atractores, conjuntos de Julia y conjuntos de Mandelbrot.",
-    platforms: "Windows",
-    courses: "Sistemas Dinámicos Discretos y Variable Compleja",
-    doi: "https://doi.org/10.5281/zenodo.17259838"
-  },
-  {
-    title: "CÍRCULO",
-    description: "Sistema visual e interactivo para analizar sistemas dinámicos discretos en la circunferencia. Útil para modelar fenómenos de Ciencia e Ingeniería, especialmente problemas de teoría de oscilaciones no lineales.",
-    platforms: "Windows",
-    courses: "Matemáticas (posgrado) - Teoría de rotación de Poincaré",
-    doi: "https://doi.org/10.5281/zenodo.17259840"
-  },
-  {
     title: "DATASOMINING",
     description: "Sistema diseñado para enseñar la teoría de redes neuronales y su utilidad para la Minería de Datos (Data Mining).",
-    platforms: "Windows",
+    platforms: "Java",
     courses: "Redes Neuronales y Minería de Datos",
     doi: "https://doi.org/10.5281/zenodo.17259842"
-  },
-  {
-    title: "LABSOM",
-    description: "Laboratorio para el estudio de las propiedades de auto-organización de las redes neuronales artificiales que operan mediante el algoritmo SOM (Redes de Kohonen). Permite observar y analizar visualmente la evolución de los parámetros de la red durante el entrenamiento.",
-    platforms: "Windows, Java",
-    courses: "Redes Neuronales",
-    doi: "https://doi.org/10.5281/zenodo.15061789"
   },
   {
     title: "BANSY3",
@@ -169,72 +150,7 @@ const industrySoftware = [
       </div>
     </section>
 
-    <!-- Software con páginas dedicadas -->
-    {tecnologiaEntries.length > 0 && (
-      <section class="py-16">
-        <div class="container mx-auto px-4">
-          <h2 class="text-3xl font-display font-bold text-gray-900 dark:text-white mb-8 text-center">
-            Herramientas Destacadas
-          </h2>
-          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
-            {tecnologiaEntries.map((entry, index) => (
-              <a 
-                href={`/tecnologia/${entry.slug}`}
-                class="card p-6 group animate-fade-in"
-                style={`animation-delay: ${0.1 * index}s`}
-              >
-                {entry.data.screenshots && entry.data.screenshots[0] && (
-                  <div class="mb-4 rounded-lg overflow-hidden">
-                    <img 
-                      src={entry.data.screenshots[0]} 
-                      alt={entry.data.title}
-                      class="w-full h-48 object-cover transform group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                )}
-                
-                <div class="flex items-start justify-between mb-2">
-                  <h2 class="text-2xl font-display font-bold text-gray-900 dark:text-white group-hover:text-unam-blue-500 dark:group-hover:text-accent-cyan-500 transition-colors">
-                    {entry.data.title}
-                  </h2>
-                  {entry.data.version && (
-                    <span class="px-2 py-1 bg-unam-blue-100 dark:bg-unam-blue-900 text-unam-blue-700 dark:text-unam-blue-300 text-xs font-semibold rounded">
-                      v{entry.data.version}
-                    </span>
-                  )}
-                </div>
-                
-                <p class="text-gray-600 dark:text-gray-400 mb-4">
-                  {entry.data.description}
-                </p>
-                
-                {entry.data.features && (
-                  <div class="space-y-1 mb-4">
-                    {entry.data.features.slice(0, 3).map(feature => (
-                      <div class="flex items-start gap-2 text-sm text-gray-600 dark:text-gray-400">
-                        <svg class="w-4 h-4 text-green-500 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
-                        </svg>
-                        <span>{feature}</span>
-                      </div>
-                    ))}
-                  </div>
-                )}
-                
-                <div class="flex items-center text-unam-blue-500 dark:text-accent-cyan-500 font-medium group-hover:underline">
-                  Ver más
-                  <svg class="w-5 h-5 ml-1 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                  </svg>
-                </div>
-              </a>
-            ))}
-          </div>
-        </div>
-      </section>
-    )}
 
-    <!-- Software Educativo -->
     <section class="py-16 bg-gray-50 dark:bg-gray-800">
       <div class="container mx-auto px-4">
         <h2 class="text-3xl font-display font-bold text-gray-900 dark:text-white mb-4 text-center">
@@ -245,6 +161,48 @@ const industrySoftware = [
           Estos sistemas han sido útiles tanto para la docencia como para la investigación en el desarrollo de tesis.
         </p>
         <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
+          {/* Software con páginas dedicadas */}
+          {tecnologiaEntries.map((entry, index) => (
+            <a 
+              href={`/tecnologia/${entry.slug}`}
+              class="card p-6 group animate-fade-in hover:shadow-xl transition-all"
+              style={`animation-delay: ${0.1 * index}s`}
+            >
+              <div class="flex items-center gap-3 mb-4">
+                <svg class="w-8 h-8 text-unam-blue-500 dark:text-accent-cyan-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <h3 class="text-xl font-bold text-gray-900 dark:text-white group-hover:text-unam-blue-500 dark:group-hover:text-accent-cyan-500 transition-colors">
+                  {entry.data.title}
+                </h3>
+              </div>
+              <p class="text-gray-600 dark:text-gray-400 mb-4 text-sm line-clamp-3">
+                {entry.data.description}
+              </p>
+              {entry.data.platforms && (
+                <div class="mb-3">
+                  <span class="text-xs font-semibold text-gray-500 dark:text-gray-400">Plataformas:</span>
+                  <p class="text-sm text-gray-700 dark:text-gray-300">{entry.data.platforms.join(', ')}</p>
+                </div>
+              )}
+              {entry.data.courses && (
+                <div class="mb-4">
+                  <span class="text-xs font-semibold text-gray-500 dark:text-gray-400">Cursos:</span>
+                  <p class="text-sm text-gray-700 dark:text-gray-300">{entry.data.courses.join(', ')}</p>
+                </div>
+              )}
+              <div class="flex items-center justify-between">
+                <span class="text-unam-blue-500 dark:text-accent-cyan-500 font-medium group-hover:underline text-sm">
+                  Ver detalles
+                </span>
+                <svg class="w-5 h-5 text-unam-blue-500 dark:text-accent-cyan-500 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                </svg>
+              </div>
+            </a>
+          ))}
+          
+          {/* Software sin páginas dedicadas */}
           {additionalEducationalSoftware.map((software, index) => (
             <div 
               class="card p-6 animate-fade-in"

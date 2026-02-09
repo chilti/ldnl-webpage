@@ -1,89 +1,42 @@
 ---
-title: "LabSOM"
-description: "Laboratorio virtual para experimentación con mapas auto-organizados"
-version: "1.0"
-downloadUrl: "/downloads/labsom-1.0.zip"
-screenshots:
-  - "/images/labsom/screenshot1.png"
-  - "/images/labsom/screenshot2.png"
-features:
-  - "Entorno de experimentación con SOM"
-  - "Datasets de ejemplo incluidos"
-  - "Visualización en tiempo real"
-  - "Comparación de configuraciones"
-  - "Herramientas educativas"
+title: "LABSOM"
+description: "Laboratorio virtual para el estudio de redes neuronales de Kohonen (SOM)"
+version: "2.0"
+downloadUrl: "https://doi.org/10.5281/zenodo.17653255"
+platforms: [".Net", "Java"]
+courses: ["Minería de Datos", "Inteligencia Artificial", "Redes Neuronales"]
 category: "software"
+registration: "03-2007-011711214800-01 / 03-2011-012713285100-01 / 03-2016-031711300400-01"
 ---
 
-## LabSOM - Laboratorio de Mapas Auto-Organizados
+## LABSOM - Laboratorio de Redes de Kohonen
 
-LabSOM es un laboratorio virtual diseñado específicamente para la enseñanza y experimentación con mapas auto-organizados (SOM).
+**LABSOM** es un laboratorio virtual para el estudio y experimentación con redes neuronales de Kohonen (Self-Organizing Maps), desarrollado en el Laboratorio de Dinámica No Lineal.
 
-### Enfoque Educativo
+### Descripción
 
-LabSOM está diseñado para:
+LABSOM proporciona un entorno interactivo para comprender el funcionamiento de los mapas autoorganizados de Kohonen, permitiendo a estudiantes e investigadores experimentar con diferentes configuraciones, parámetros y conjuntos de datos. Está diseñado para usarse en la enseñanza de las materias de Redes Neuronales y Minería de Datos que se imparten en la carrera de Ciencias de la Computación de la Facultad de Ciencias.
 
-- **Estudiantes**: Aprender los conceptos fundamentales de SOM de manera interactiva
-- **Investigadores**: Experimentar con diferentes configuraciones y parámetros
-- **Docentes**: Demostrar el funcionamiento de redes neuronales no supervisadas
 
-### Características Principales
+### Versiones Disponibles
 
-- **Datasets Incluidos**: Ejemplos clásicos para experimentación inmediata
-- **Visualización en Tiempo Real**: Observa cómo el SOM se entrena paso a paso
-- **Modo Comparación**: Compara diferentes configuraciones lado a lado
-- **Explicaciones Integradas**: Tooltips y ayuda contextual
-- **Ejercicios Guiados**: Tutoriales paso a paso
+#### LabSOM Windows (.Net)
+- **Plataforma**: .Net Framework
+- **Registro**: 03-2007-011711214800-01 (primera versión) / 03-2011-012713285100-01 (segunda versión)
+- **Descarga**: [LabSOM .Net](https://doi.org/10.5281/zenodo.17653255)
 
-### Datasets de Ejemplo
 
-LabSOM incluye datasets clásicos:
+#### LabSOM Java
+- **Plataforma**: Java (multiplataforma)
+- **Registro INDAUTOR**: 03-2016-031711300400-01
+- **Coautores**: Miguel Ángel Piña Avelino, Elio Atenógenes Villaseñor García, José Luis Jiménez Andrade y Humberto Carrillo Calvet
+- **Descarga**: [LabSOM Java](https://doi.org/10.5281/zenodo.15061760)
 
-- **Iris**: Clasificación de flores
-- **Wine**: Clasificación de vinos
-- **Digits**: Reconocimiento de dígitos
-- **Colors**: Organización de colores
+### Aplicaciones Académicas
 
-### Experimentos Disponibles
+LABSOM se utiliza en los siguientes cursos:
 
-1. **Efecto del Tamaño de la Red**: Compara redes de diferentes tamaños
-2. **Tasa de Aprendizaje**: Observa cómo afecta la velocidad de convergencia
-3. **Función de Vecindad**: Experimenta con diferentes funciones
-4. **Inicialización**: Compara inicialización aleatoria vs. PCA
+- **Redes Neuronales**: Laboratorio práctico de mapas autoorganizados
+- **Minería de Datos**: Técnicas de clustering y visualización
+- **Inteligencia Artificial**: Experimentación con aprendizaje no supervisado
 
-### Interfaz Educativa
-
-- **Panel de Control**: Ajusta parámetros fácilmente
-- **Visualización del Mapa**: Ve la red y los datos proyectados
-- **Gráficas de Entrenamiento**: Error cuantización, topología
-- **Historial**: Guarda y compara experimentos
-
-### Aplicación en Cursos
-
-LabSOM es ideal para:
-
-- Cursos de redes neuronales
-- Introducción a machine learning
-- Análisis de datos
-- Visualización de información
-
-### Descargas
-
-**Versión actual**: 1.0
-
-[Descargar LabSOM 1.0](/downloads/labsom-1.0.zip)
-
-### Material Didáctico
-
-Incluye:
-
-- Manual del usuario
-- Guías de laboratorio
-- Ejercicios propuestos
-- Soluciones para docentes
-
-### Requisitos
-
-- Sistema operativo: Windows, Linux, macOS
-- Java Runtime Environment 8 o superior
-- Memoria RAM: 2 GB mínimo

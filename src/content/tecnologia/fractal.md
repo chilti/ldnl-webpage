@@ -1,77 +1,52 @@
 ---
-title: "Fractal"
-description: "Generador de fractales y atractores extraños"
-version: "1.5"
-downloadUrl: "/downloads/fractal-1.5.zip"
-screenshots:
-  - "/images/fractal/screenshot1.png"
-  - "/images/fractal/screenshot2.png"
-features:
-  - "Generación de fractales clásicos"
-  - "Visualización de atractores extraños"
-  - "Zoom y exploración interactiva"
-  - "Paletas de colores personalizables"
-  - "Exportación en alta resolución"
+title: "FRACTAL"
+description: "Software educativo para la generación y estudio de conjuntos fractales"
+version: "1.0"
+downloadUrl: "https://doi.org/10.5281/zenodo.17259838"
+platforms: ["Windows"]
+courses: ["Ecuaciones Diferenciales I", "Ecuaciones Diferenciales II"]
 category: "software"
+registration: "03-2000-012111341600-01"
 ---
 
-## Fractal - Generador de Fractales
+## FRACTAL - Generación de Conjuntos Fractales
 
-Fractal es una herramienta para generar y visualizar fractales clásicos y atractores extraños de sistemas dinámicos caóticos.
+**FRACTAL** es un software educativo para la generación y visualización de conjuntos fractales, desarrollado en el Laboratorio de Dinámica No Lineal.
 
-### Fractales Incluidos
+### Descripción
 
-#### Conjunto de Mandelbrot
-
-El conjunto de Mandelbrot es uno de los fractales más famosos, definido por la iteración:
-
-z_{n+1} = z_n² + c
-
-Donde c es un número complejo.
-
-#### Conjunto de Julia
-
-Los conjuntos de Julia son una familia de fractales relacionados con el conjunto de Mandelbrot.
-
-#### Atractor de Lorenz
-
-El atractor de Lorenz es un atractor extraño generado por el sistema:
-
-- dx/dt = σ(y - x)
-- dy/dt = x(ρ - z) - y
-- dz/dt = xy - βz
-
-#### Atractor de Rössler
-
-Sistema tridimensional que genera un atractor con forma de banda enrollada.
+FRACTAL permite explorar la geometría fractal mediante la generación de diversos conjuntos fractales clásicos, incluyendo el conjunto de Mandelbrot, conjuntos de Julia, y otros fractales importantes en la teoría de sistemas dinámicos.
 
 ### Características Principales
 
-- **Exploración Interactiva**: Haz zoom y explora regiones específicas de los fractales
-- **Colores Personalizables**: Elige entre diferentes paletas de colores o crea la tuya
-- **Alta Resolución**: Genera imágenes de alta calidad para publicaciones
-- **Parámetros Ajustables**: Modifica los parámetros de los sistemas dinámicos
-- **Animaciones**: Crea animaciones de la evolución de los atractores
+- **Conjunto de Mandelbrot**: Generación y exploración interactiva
+- **Conjuntos de Julia**: Visualización de diferentes conjuntos de Julia
+- **Zoom Interactivo**: Exploración detallada de estructuras autosimilares
+- **Paletas de Colores**: Múltiples esquemas de coloración
+- **Exportación de Imágenes**: Guarda fractales en alta resolución
 
-### Aplicaciones
+### Plataformas
 
-- Visualización de conceptos de teoría del caos
-- Generación de arte fractal
-- Material didáctico para cursos
-- Investigación en sistemas dinámicos
+- Windows
 
-### Galería
+### Aplicaciones Académicas
 
-Consulta nuestra [galería](/galeria) para ver ejemplos de fractales y atractores generados con esta herramienta.
+FRACTAL se utiliza en los siguientes cursos:
 
-### Descargas
+- **Ecuaciones Diferenciales I**: Introducción a la geometría fractal
+- **Ecuaciones Diferenciales II**: Fractales en sistemas dinámicos complejos
 
-**Versión actual**: 1.5
+### Registro
 
-[Descargar Fractal 1.5](/downloads/fractal-1.5.zip)
+**Registro INDAUTOR**: 03-2000-012111341600-01
 
-### Requisitos
+### Descarga
 
-- Sistema operativo: Windows, Linux, macOS
-- Tarjeta gráfica con soporte OpenGL (recomendado)
-- Memoria RAM: 4 GB mínimo
+Puedes descargar FRACTAL desde el siguiente enlace:
+
+**[Descargar FRACTAL](https://doi.org/10.5281/zenodo.17259838 )**
+
+### Documentación
+
+La documentación completa está incluida en el paquete de descarga.
+
