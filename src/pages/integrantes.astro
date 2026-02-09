@@ -353,6 +353,15 @@ const estudiantesActualesDoctorado = [
 	}
 ];
 
+const estudiantesActualesMaestria = [
+	{
+		name: "Abraham Ayala Ruiz",
+		photo: "/images/estudiantes/descarga.png",
+		program: "Maestría en Ciencia de Datos, INFOTEC",
+		education: "Licenciatura en Matemáticas, Facultad de Ciencias, UNAM"
+	}
+];
+
 const estudiantesActualesLicenciatura = [
 	{
 		name: "Ana Valeria Deloya Andrade",
@@ -551,6 +560,35 @@ const estudiantesActualesLicenciatura = [
 							<p class="text-sm text-gray-600 dark:text-gray-400 text-center">
 								{student.program}
 							</p>
+						</div>
+					))}
+				</div>
+			</div>
+
+			<!-- Maestría Actuales -->
+			<div class="mb-16">
+				<h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-6 border-b-2 border-unam-blue dark:border-unam-gold-300 pb-2">
+					Maestría
+				</h3>
+				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+					{estudiantesActualesMaestria.map(student => (
+						<div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-6 shadow hover:shadow-lg transition-shadow">
+							<img 
+								src={student.photo} 
+								alt={student.name}
+								class="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
+							/>
+							<h4 class="text-lg font-semibold text-gray-900 dark:text-white text-center mb-2">
+								{student.name}
+							</h4>
+							<p class="text-sm text-gray-600 dark:text-gray-400 text-center mb-1">
+								{student.program}
+							</p>
+							{student.education && (
+								<p class="text-xs text-gray-500 dark:text-gray-500 text-center">
+									{student.education}
+								</p>
+							)}
 						</div>
 					))}
 				</div>
