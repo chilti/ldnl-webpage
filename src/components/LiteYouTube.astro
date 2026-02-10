@@ -9,9 +9,10 @@ interface Props {
 	videoId: string;
 	title?: string;
 	startTime?: number;
+	showTitle?: boolean; // Mostrar título en overlay (por defecto false)
 }
 
-const { videoId, title = "Video de YouTube", startTime } = Astro.props;
+const { videoId, title = "Video de YouTube", startTime, showTitle = false } = Astro.props;
 const thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
 const embedUrl = `https://www.youtube.com/embed/${videoId}${startTime ? `?start=${startTime}` : ''}`;
 ---
@@ -39,9 +40,11 @@ const embedUrl = `https://www.youtube.com/embed/${videoId}${startTime ? `?start=
 	</div>
 	
 	<!-- Title Overlay (opcional) -->
-	<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
-		<p class="text-white text-sm font-medium line-clamp-2">{title}</p>
-	</div>
+	{showTitle && (
+		<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+			<p class="text-white text-sm font-medium line-clamp-2">{title}</p>
+		</div>
+	)}
 </div>
 
 <script>
