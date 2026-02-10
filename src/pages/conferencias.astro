@@ -1,0 +1,134 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const pageTitle = "Conferencias";
+const pageDescription = "Charlas y presentaciones de integrantes y colaboradores del Laboratorio de Dinámica No Lineal";
+
+// Lista de conferencias
+const conferencias = [
+	{
+		id: "snw7gZIEl-w"
+	},
+	{
+		id: "covOjpBLTjc"
+	},
+	{
+		id: "new0KFiRA-Q"
+	},
+	{
+		id: "7qrY4TW7FI4"
+	},
+	{
+		id: "rp3MOf655ok"
+	},
+	{
+		id: "qdre-EFR0xM"
+	},
+	{
+		id: "TpA9orCjBD4",
+		startTime: 4374
+	},
+	{
+		id: "2BAJej5gGxY"
+	},
+	{
+		id: "-LcnpvTvZQo"
+	},
+	{
+		id: "Afd7PO_nnno"
+	},
+	{
+		id: "T0wegTXNw_M"
+	},
+	{
+		id: "tiouKudBNZ8"
+	},
+	{
+		id: "lFqN7QzAYRE"
+	}
+];
+
+const playlistId = "PLOjAg8MbeIzRn-mYa7NeOG0ROMXvwoqCE";
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+	<main class="min-h-screen bg-white dark:bg-gray-900">
+		<!-- Hero Section -->
+		<section class="bg-gradient-to-r from-unam-blue-600 to-accent-purple-600 text-white py-20">
+			<div class="container mx-auto px-4">
+				<div class="max-w-4xl mx-auto text-center">
+					<h1 class="text-4xl md:text-5xl font-display font-bold mb-6 animate-fade-in">
+						Conferencias
+					</h1>
+					<p class="text-xl text-white/90 animate-fade-in" style="animation-delay: 0.2s">
+						Charlas y presentaciones de integrantes y colaboradores del Laboratorio de Dinámica No Lineal
+					</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Conferencias Grid -->
+		<section class="py-20">
+			<div class="container mx-auto px-4">
+				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+					{conferencias.map((conferencia, index) => (
+						<div 
+							class="card overflow-hidden group"
+							x-data
+							x-intersect="$el.classList.add('animate-in-up')"
+							style={`animation-delay: ${0.1 * (index % 6)}s`}
+						>
+							<div class="aspect-video bg-gray-200 dark:bg-gray-700 relative overflow-hidden">
+								<iframe
+									class="w-full h-full"
+									src={`https://www.youtube.com/embed/${conferencia.id}${conferencia.startTime ? `?start=${conferencia.startTime}` : ''}`}
+									title={`Conferencia - Laboratorio de Dinámica No Lineal`}
+									frameborder="0"
+									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+									allowfullscreen
+								></iframe>
+							</div>
+						</div>
+					))}
+				</div>
+
+				<!-- Playlist Section -->
+				<div class="mt-16 max-w-4xl mx-auto">
+					<div class="card overflow-hidden">
+						<div class="p-6 bg-gradient-to-r from-unam-blue-500 to-accent-purple-500 text-white">
+							<h2 class="text-2xl font-display font-bold mb-2">
+								Playlist Completa
+							</h2>
+							<p class="text-white/90">
+								Todas las conferencias organizadas en una playlist de YouTube
+							</p>
+						</div>
+						<div class="aspect-video bg-gray-200 dark:bg-gray-700">
+							<iframe
+								class="w-full h-full"
+								src={`https://www.youtube.com/embed/videoseries?list=${playlistId}`}
+								title="Playlist de Conferencias - Laboratorio de Dinámica No Lineal"
+								frameborder="0"
+								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+								allowfullscreen
+							></iframe>
+						</div>
+						<div class="p-6">
+							<a 
+								href={`https://www.youtube.com/playlist?list=${playlistId}`}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="inline-flex items-center gap-2 text-unam-blue-500 dark:text-accent-cyan-500 hover:underline font-medium"
+							>
+								Ver playlist en YouTube
+								<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+								</svg>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</BaseLayout>
