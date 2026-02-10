@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import LiteYouTube from '../components/LiteYouTube.astro';
 
 const pageTitle = "Conferencias";
 const pageDescription = "Charlas y presentaciones de integrantes y colaboradores del Laboratorio de Dinámica No Lineal";
@@ -78,16 +79,11 @@ const playlistId = "PLOjAg8MbeIzRn-mYa7NeOG0ROMXvwoqCE";
 							x-intersect="$el.classList.add('animate-in-up')"
 							style={`animation-delay: ${0.1 * (index % 6)}s`}
 						>
-							<div class="aspect-video bg-gray-200 dark:bg-gray-700 relative overflow-hidden">
-								<iframe
-									class="w-full h-full"
-									src={`https://www.youtube.com/embed/${conferencia.id}${conferencia.startTime ? `?start=${conferencia.startTime}` : ''}`}
-									title={`Conferencia - Laboratorio de Dinámica No Lineal`}
-									frameborder="0"
-									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-									allowfullscreen
-								></iframe>
-							</div>
+							<LiteYouTube 
+								videoId={conferencia.id}
+								title="Conferencia - Laboratorio de Dinámica No Lineal"
+								startTime={conferencia.startTime}
+							/>
 						</div>
 					))}
 				</div>

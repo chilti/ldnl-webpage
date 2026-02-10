@@ -11,6 +11,8 @@ interface Props {
 }
 
 const { title, description = 'Laboratorio de Dinámica No Lineal - Investigación de vanguardia en sistemas complejos' } = Astro.props;
+const siteUrl = Astro.site?.href || 'https://www.dynamics.unam.edu';
+const ogImage = `${siteUrl}/og-image.png`;
 ---
 
 <!doctype html>
@@ -22,12 +24,35 @@ const { title, description = 'Laboratorio de Dinámica No Lineal - Investigació
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<meta name="generator" content={Astro.generator} />
 		
-		<!-- Open Graph -->
+		<!-- SEO Meta Tags -->
+		<meta name="keywords" content="dinámica no lineal, sistemas complejos, UNAM, investigación, neuroinformática, bioinformática, redes neuronales, sistemas dinámicos" />
+		<meta name="author" content="Laboratorio de Dinámica No Lineal - UNAM" />
+		<meta name="robots" content="index, follow" />
+		<link rel="canonical" href={Astro.url.href} />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url.href} />
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
-		<meta property="og:type" content="website" />
+		<meta property="og:image" content={ogImage} />
+		<meta property="og:locale" content="es_MX" />
+		<meta property="og:site_name" content="Laboratorio de Dinámica No Lineal - UNAM" />
 		
-		<!-- Preload fonts -->
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content={Astro.url.href} />
+		<meta name="twitter:title" content={title} />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content={ogImage} />
+		
+		<!-- DNS Prefetch for external resources -->
+		<link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+		<link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+		<link rel="dns-prefetch" href="https://cdn.jsdelivr.net" />
+		<link rel="dns-prefetch" href="https://www.youtube.com" />
+		
+		<!-- Preconnect for critical resources -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 		

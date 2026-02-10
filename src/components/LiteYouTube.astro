@@ -1,0 +1,98 @@
+---
+/**
+ * LiteYouTube Component
+ * Carga ligera de videos de YouTube con lazy loading
+ * Solo carga el iframe completo cuando el usuario hace click
+ */
+
+interface Props {
+	videoId: string;
+	title?: string;
+	startTime?: number;
+}
+
+const { videoId, title = "Video de YouTube", startTime } = Astro.props;
+const thumbnailUrl = `https://i.ytimg.com/vi/${videoId}/hqdefault.jpg`;
+const embedUrl = `https://www.youtube.com/embed/${videoId}${startTime ? `?start=${startTime}` : ''}`;
+---
+
+<div 
+	class="lite-youtube aspect-video bg-gray-200 dark:bg-gray-700 relative overflow-hidden cursor-pointer group"
+	data-video-id={videoId}
+	data-title={title}
+>
+	<!-- Thumbnail -->
+	<img 
+		src={thumbnailUrl}
+		alt={title}
+		class="w-full h-full object-cover"
+		loading="lazy"
+	/>
+	
+	<!-- Play Button Overlay -->
+	<div class="absolute inset-0 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-colors">
+		<div class="w-20 h-20 bg-red-600 rounded-full flex items-center justify-center transform group-hover:scale-110 transition-transform shadow-2xl">
+			<svg class="w-10 h-10 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+				<path d="M8 5v14l11-7z"/>
+			</svg>
+		</div>
+	</div>
+	
+	<!-- Title Overlay (opcional) -->
+	<div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/80 to-transparent p-4">
+		<p class="text-white text-sm font-medium line-clamp-2">{title}</p>
+	</div>
+</div>
+
+<script>
+	// Lazy load YouTube iframe on click
+	document.addEventListener('DOMContentLoaded', () => {
+		const liteYoutubes = document.querySelectorAll('.lite-youtube');
+		
+		liteYoutubes.forEach((element) => {
+			element.addEventListener('click', function() {
+				const videoId = this.getAttribute('data-video-id');
+				const title = this.getAttribute('data-title');
+				
+				// Create iframe
+				const iframe = document.createElement('iframe');
+				iframe.setAttribute('src', `https://www.youtube.com/embed/${videoId}?autoplay=1`);
+				iframe.setAttribute('title', title);
+				iframe.setAttribute('frameborder', '0');
+				iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture');
+				iframe.setAttribute('allowfullscreen', '');
+				iframe.className = 'w-full h-full';
+				
+				// Replace thumbnail with iframe
+				this.innerHTML = '';
+				this.appendChild(iframe);
+				this.classList.remove('cursor-pointer');
+			});
+		});
+	});
+</script>
+
+<style>
+	.lite-youtube {
+		position: relative;
+		background-color: #000;
+	}
+	
+	.lite-youtube::before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAADGCAYAAAAT+OqFAAAAdklEQVQoz42QQQ7AIAgEF/T/D+kbq/RWAlnQyyazA4aoAB4FsBSA/bFjuF1EOL7VbrIrBuusmrt4ZZORfb6ehbWdnRHEIiITaEUKa5EJqUakRSaEYBJSCY2dEstQY7AuxahwXFrvZmWl2rh4JZ07z9dLtesfNj5q0FU3A5ObbwAAAABJRU5ErkJggg==);
+		background-position: top;
+		background-repeat: repeat-x;
+		height: 60px;
+		padding-bottom: 50px;
+		width: 100%;
+		transition: all 0.2s cubic-bezier(0, 0, 0.2, 1);
+	}
+	
+	.lite-youtube:hover::before {
+		opacity: 0;
+	}
+</style>
