@@ -8,9 +8,9 @@ const pageDescription = "Equipo del Laboratorio de Dinámica No Lineal";
 const responsable = {
 	name: "Dr. Humberto Carrillo Calvet",
 	photo: "/images/generales/fotos/humberto_carrillo2.jpg",
-	position: "Director del Laboratorio de Dinámica No Lineal",
+	position: "Fue miembro del grupo de académicos fundadores del <a href='https://www.c3.unam.mx/' target='_blank' rel='noopener noreferrer' class='hover:underline'>Centro de Ciencias de la Complejidad (C3)</a> de la UNAM.", 
 	titles: "Profesor Titular C, PRIDE D, SNII Emérito",
-	department: "Departamento de Matemáticas, Facultad de Ciencias, UNAM",
+	department: "Departamento de Matemáticas, Facultad de Ciencias, UNAM. Coordinador de Ciencia de Datos en el <a href='https://www.c3.unam.mx/' target='_blank' rel='noopener noreferrer' class='hover:underline'>C3</a>.",
 	education: [
 		"Maestría en Ciencias (Matemáticas): Facultad de Ciencias, UNAM, 1981",
 		"Doctorado en Ciencias (Matemáticas): Facultad de Ciencias, UNAM, 1984"
@@ -32,7 +32,7 @@ const tecnicos = [
 		photo: "/images/estudiantes/jlja2.png",
 		position: "Técnico Académico",
 		department: "Departamento de Matemáticas, Facultad de Ciencias, UNAM",
-		titles: "Técnico Asociado C, PRIDE D, SNII I",
+		titles: "Doctor en Ciencia de Datos, PRIDE D, SNII I",
 		education: [
 			"Doctor en Ciencia de Datos, INFOTEC",
 			"Maestría en Inteligencia Artificial, Departamento de Inteligencia Artificial, Universidad Veracruzana",
@@ -421,9 +421,9 @@ const estudiantesActualesLicenciatura = [
 					</div>
 					<div class="md:w-2/3">
 						<h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-2">{responsable.name}</h3>
-						<p class="text-lg text-unam-blue dark:text-unam-gold-300 mb-2">{responsable.position}</p>
+						<p class="text-lg text-unam-blue dark:text-unam-gold-300 mb-2" set:html={responsable.position} />
 						<p class="text-md text-gray-700 dark:text-gray-300 mb-4">{responsable.titles}</p>
-						<p class="text-gray-600 dark:text-gray-400 mb-6">{responsable.department}</p>
+						<p class="text-gray-600 dark:text-gray-400 mb-6" set:html={responsable.department} />
 						
 						<div class="mb-6">
 							<h4 class="text-lg font-semibold text-gray-900 dark:text-white mb-2">Formación Académica:</h4>
