@@ -1,0 +1,241 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+
+const pageTitle = "Dr. Humberto Carrillo Calvet";
+const pageDescription = "Director del Laboratorio de Dinámica No Lineal y miembro fundador del Centro de Ciencias de la Complejidad (C3) de la UNAM.";
+
+const profiles = [
+	{
+		label: "ORCID",
+		url: "https://orcid.org/0000-0003-3659-6769",
+		icon: `<svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zm-1.844 5.688h1.594v1.594h-1.594V5.688zm-1.5 2.906h4.594v.969h-4.594v-.969zm0 1.594h4.594v6.625h-1.344v-6.125h-1.875v6.125H7.656v-6.625z"/></svg>`,
+	},
+	{
+		label: "Google Scholar",
+		url: "https://scholar.google.com/citations?user=HWRDV7gAAAAJ&hl=es",
+		icon: `<svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M5.242 13.769L0 9.5 12 0l12 9.5-5.242 4.269C17.548 11.249 14.978 9.5 12 9.5c-2.977 0-5.548 1.748-6.758 4.269zM12 10a7 7 0 1 0 0 14 7 7 0 0 0 0-14z"/></svg>`,
+	},
+	{
+		label: "ResearchGate",
+		url: "https://www.researchgate.net/profile/Humberto-Carrillo-Calvet",
+		icon: `<svg viewBox="0 0 24 24" fill="currentColor" class="w-5 h-5"><path d="M19.586 0c-.818 0-1.508.19-2.073.565-.563.377-.97.936-1.213 1.68a3.193 3.193 0 0 0-.112.437 8.365 8.365 0 0 0-.078.53 9 9 0 0 0-.05.727c-.01.282-.013.621-.013 1.016a31.121 31.121 0 0 0 .014 1.017 9 9 0 0 0 .05.727 7.946 7.946 0 0 0 .077.53h-.005a3.334 3.334 0 0 0 .113.438c.245.743.65 1.303 1.214 1.68.565.376 1.256.564 2.075.564.8 0 1.536-.213 2.105-.603.57-.39.94-.916 1.175-1.65.076-.235.135-.558.177-.93a10.9 10.9 0 0 0 .043-1.207v-.82a10.9 10.9 0 0 0-.043-1.207 6.61 6.61 0 0 0-.177-.93c-.235-.734-.605-1.26-1.175-1.65C21.122.213 20.386 0 19.586 0zm-3.873 2.23h1.753v5.123h-1.753V2.23zm-3.367 0h1.752v5.123h-1.752V2.23zm-3.182 0h1.753v5.123H9.164V2.23z"/></svg>`,
+	},
+];
+
+const stats = [
+	{ value: "46", label: "Artículos en revistas indizadas" },
+	{ value: "1,100+", label: "Citas totales" },
+	{ value: "700+", label: "Citas de su artículo más citado" },
+	{ value: "19/8/7", label: "Tesis dirigidas (Lic/Maes/Doc)" },
+	{ value: "23", label: "Registros de software INDAUTOR" },
+	{ value: "50+", label: "Años en la Facultad de Ciencias" },
+];
+---
+
+<BaseLayout title={pageTitle} description={pageDescription}>
+	<main class="min-h-screen bg-white dark:bg-gray-900">
+
+		<!-- Breadcrumbs -->
+		<div class="bg-gray-50 dark:bg-gray-800/50 border-b border-gray-200 dark:border-gray-700">
+			<div class="container mx-auto px-4 py-4">
+				<nav class="flex text-sm text-gray-600 dark:text-gray-400">
+					<a href="/" class="hover:text-unam-blue dark:hover:text-unam-gold-300 transition-colors">Inicio</a>
+					<span class="mx-2">/</span>
+					<a href="/integrantes" class="hover:text-unam-blue dark:hover:text-unam-gold-300 transition-colors">Integrantes</a>
+					<span class="mx-2">/</span>
+					<span class="text-gray-900 dark:text-white">Dr. Humberto Carrillo Calvet</span>
+				</nav>
+			</div>
+		</div>
+
+		<!-- Hero Section -->
+		<section class="bg-gradient-to-br from-unam-blue-700 via-unam-blue-600 to-accent-purple-600 text-white py-20">
+			<div class="container mx-auto px-4">
+				<div class="max-w-5xl mx-auto flex flex-col md:flex-row items-center gap-10">
+					<!-- Photo -->
+					<div class="flex-shrink-0">
+						<img
+							src="/images/generales/fotos/humberto_carrillo2.jpg"
+							alt="Dr. Humberto Carrillo Calvet"
+							class="w-52 h-52 rounded-full object-cover shadow-2xl border-4 border-white/30"
+						/>
+					</div>
+					<!-- Info -->
+					<div>
+						<h1 class="text-4xl md:text-5xl font-display font-bold mb-3 animate-fade-in">
+							Dr. Humberto Carrillo Calvet
+						</h1>
+						<p class="text-xl text-white/90 mb-1">Profesor Titular C · PRIDE D · SNII Emérito</p>
+						<p class="text-white/75 mb-6">
+							Director del Laboratorio de Dinámica No Lineal ·
+							Departamento de Matemáticas, Facultad de Ciencias, UNAM
+						</p>
+						<!-- Profile Links -->
+						<div class="flex flex-wrap gap-3">
+							{profiles.map(p => (
+								<a
+									href={p.url}
+									target="_blank"
+									rel="noopener noreferrer"
+									class="inline-flex items-center gap-2 px-4 py-2 bg-white/15 hover:bg-white/25 border border-white/30 rounded-full text-sm font-medium transition-all backdrop-blur-sm"
+								>
+									<span set:html={p.icon} />
+									{p.label}
+								</a>
+							))}
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Stats Bar -->
+		<section class="bg-unam-blue-900 dark:bg-gray-950 text-white py-10">
+			<div class="container mx-auto px-4">
+				<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center max-w-5xl mx-auto">
+					{stats.map(stat => (
+						<div>
+							<div class="text-3xl font-bold text-unam-gold-400 mb-1">{stat.value}</div>
+							<div class="text-xs text-white/70 leading-tight">{stat.label}</div>
+						</div>
+					))}
+				</div>
+			</div>
+		</section>
+
+		<!-- Main Content -->
+		<section class="py-16">
+			<div class="container mx-auto px-4 max-w-4xl">
+
+				<!-- Reconocimiento SNII Emérito -->
+				<div class="card p-8 mb-10 border-l-4 border-unam-gold-400">
+					<h2 class="text-2xl font-display font-bold text-gray-900 dark:text-white mb-4">
+						Reconocimiento SNII Emérito 2025
+					</h2>
+					<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+						El Sistema Nacional de Investigadores (SNII) reconoció en 2025 al matemático Humberto Carrillo, profesor de la
+						Facultad de Ciencias de la UNAM, por su destacada trayectoria en investigación sobre teoría cualitativa de las
+						ecuaciones diferenciales, la modelación matemática en neurobiología, cienciometría y redes neuronales artificiales,
+						y por ser reconocido pionero en el campo de la bioinformática por el desarrollo de algoritmos para el alineamiento
+						de secuencias biológicas.
+					</p>
+					<p class="text-sm text-gray-500 dark:text-gray-400 italic">
+						Early Bioinformatics: the birth of a discipline. <em>Bioinformatics</em>, Vol. 19, No. 17, 2176-2190, 2003.
+					</p>
+				</div>
+
+				<!-- Trayectoria de Investigación -->
+				<div class="card p-8 mb-10">
+					<h2 class="text-2xl font-display font-bold text-gray-900 dark:text-white mb-4">
+						Trayectoria de Investigación
+					</h2>
+					<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+						De sus <strong>46 artículos en revistas indizadas</strong>, el SNII destacó su trabajo
+						<em>"The Multiple Sequence Alignment Problem in Biology"</em>, publicado en 1988 en el
+						<em>Journal of Applied Mathematics</em>, con más de <strong>700 citas</strong>.
+						Ha recibido más de <strong>1,100 citas</strong> en total, de las cuales 70 son en libros, 60 en tesis doctorales
+						y 500 en patentes.
+					</p>
+					<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+						De acuerdo con los registros del <em>Web of Science</em>, figura en el grupo de los
+						<strong>5 mexicanos más citados en patentes</strong>.
+					</p>
+					<p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+						Como muestra de su liderazgo internacional, recibió el <strong>Fogarty Award</strong> de los National Institutes
+						of Health (USA) y <strong>dos premios nacionales de la República de Cuba</strong>.
+					</p>
+				</div>
+
+				<!-- Docencia y Formación -->
+				<div class="card p-8 mb-10">
+					<h2 class="text-2xl font-display font-bold text-gray-900 dark:text-white mb-4">
+						Docencia y Formación de Recursos Humanos
+					</h2>
+					<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+						Desde su incorporación en la Facultad de Ciencias de la UNAM hace <strong>más de 50 años</strong>,
+						ha impartido decenas de cursos de licenciatura y posgrado en matemáticas, neurobiología matemática,
+						bioinformática, redes neuronales artificiales y cienciometría.
+					</p>
+					<div class="grid grid-cols-3 gap-4 text-center mb-6">
+						<div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
+							<div class="text-3xl font-bold text-unam-blue-600 dark:text-accent-cyan-400 mb-1">19</div>
+							<div class="text-sm text-gray-600 dark:text-gray-400">Tesis de Licenciatura</div>
+						</div>
+						<div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
+							<div class="text-3xl font-bold text-unam-blue-600 dark:text-accent-cyan-400 mb-1">8</div>
+							<div class="text-sm text-gray-600 dark:text-gray-400">Tesis de Maestría</div>
+						</div>
+						<div class="bg-gray-50 dark:bg-gray-800 rounded-lg p-4">
+							<div class="text-3xl font-bold text-unam-blue-600 dark:text-accent-cyan-400 mb-1">7</div>
+							<div class="text-sm text-gray-600 dark:text-gray-400">Tesis de Doctorado</div>
+						</div>
+					</div>
+					<p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+						Fue <strong>director fundador del Laboratorio de Dinámica No Lineal</strong> de la Facultad de Ciencias
+						y coordinador general del Macroproyecto de Tecnologías de Computación y la Información de la UNAM.
+					</p>
+				</div>
+
+				<!-- Desarrollo Tecnológico -->
+				<div class="card p-8 mb-10">
+					<h2 class="text-2xl font-display font-bold text-gray-900 dark:text-white mb-4">
+						Desarrollo Tecnológico
+					</h2>
+					<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+						Poniendo tecnologías de frontera al servicio de la enseñanza y la investigación, dirigió
+						<strong>11 desarrollos tecnológicos</strong> que permiten el análisis computacional de modelos de sistemas
+						dinámicos no lineales y redes neuronales artificiales. Estos sistemas de software derivaron en
+						<strong>23 registros ante INDAUTOR</strong>.
+					</p>
+					<p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+						A nivel nacional fue <strong>Vicepresidente de Investigación y Desarrollo Tecnológico</strong> de la Cámara
+						Nacional de la Industria Electrónica, de Telecomunicaciones y Tecnologías de la Información (CANIETI) y
+						Miembro del Comité Técnico de la Asociación Mexicana de Directivos de la Investigación Aplicada y el
+						Desarrollo Tecnológico (ADIAT).
+					</p>
+				</div>
+
+				<!-- Academic profiles -->
+				<div class="card p-8">
+					<h2 class="text-2xl font-display font-bold text-gray-900 dark:text-white mb-6">
+						Perfiles Académicos
+					</h2>
+					<div class="flex flex-col sm:flex-row gap-4">
+						{profiles.map(p => (
+							<a
+								href={p.url}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="flex-1 flex items-center gap-3 px-5 py-4 border border-gray-200 dark:border-gray-700 rounded-xl hover:border-unam-blue-400 dark:hover:border-accent-cyan-400 hover:shadow-md transition-all group"
+							>
+								<span class="text-unam-blue-500 dark:text-accent-cyan-400 group-hover:scale-110 transition-transform" set:html={p.icon} />
+								<div>
+									<div class="font-semibold text-gray-900 dark:text-white text-sm">{p.label}</div>
+									<div class="text-xs text-gray-500 dark:text-gray-400 truncate max-w-[180px]">{p.url.replace(/^https?:\/\//, '')}</div>
+								</div>
+								<svg class="w-4 h-4 text-gray-400 ml-auto opacity-0 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+								</svg>
+							</a>
+						))}
+					</div>
+				</div>
+
+			</div>
+		</section>
+
+		<!-- Back link -->
+		<div class="container mx-auto px-4 pb-16 max-w-4xl">
+			<a
+				href="/integrantes"
+				class="inline-flex items-center gap-2 text-unam-blue-500 dark:text-accent-cyan-400 hover:underline font-medium"
+			>
+				<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/>
+				</svg>
+				Regresar a Integrantes
+			</a>
+		</div>
+
+	</main>
+</BaseLayout>
