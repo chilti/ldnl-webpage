@@ -261,6 +261,7 @@ const sortedYears = Object.keys(worksByYear).sort((a, b) => parseInt(b) - parseI
           </h2>
           <p class="text-sm text-gray-500 dark:text-gray-400 mb-8">Obtenidas directamente de los perfiles ORCID de los investigadores</p>
         </div>
+        {sortedYears.map(year => (
           <div class="mb-12 animate-fade-in">
             <h2 class="text-3xl font-display font-bold text-gray-900 dark:text-white mb-6 border-b border-gray-200 dark:border-gray-700 pb-2">
               {year}
