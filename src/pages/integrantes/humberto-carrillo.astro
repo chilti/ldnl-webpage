@@ -24,8 +24,9 @@ const profiles = [
 
 const stats = [
 	{ value: "46", label: "Artículos en revistas indizadas" },
-	{ value: "1,100+", label: "Citas totales" },
+	{ value: "2,000+", label: "Citas en Google Scholar" },
 	{ value: "700+", label: "Citas de su artículo más citado" },
+	{ value: "500+", label: "Citas en patentes" },
 	{ value: "19/8/7", label: "Tesis dirigidas (Lic/Maes/Doc)" },
 	{ value: "23", label: "Registros de software INDAUTOR" },
 	{ value: "50+", label: "Años en la Facultad de Ciencias" },
@@ -92,7 +93,7 @@ const stats = [
 		<!-- Stats Bar -->
 		<section class="bg-unam-blue-900 dark:bg-gray-950 text-white py-10">
 			<div class="container mx-auto px-4">
-				<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6 text-center max-w-5xl mx-auto">
+				<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-6 text-center max-w-5xl mx-auto">
 					{stats.map(stat => (
 						<div>
 							<div class="text-3xl font-bold text-unam-gold-400 mb-1">{stat.value}</div>
@@ -110,7 +111,17 @@ const stats = [
 				<!-- Reconocimiento SNII Emérito -->
 				<div class="card p-8 mb-10 border-l-4 border-unam-gold-400">
 					<h2 class="text-2xl font-display font-bold text-gray-900 dark:text-white mb-4">
-						Reconocimiento SNII Emérito 2025
+						<a
+							href="https://www.c3.unam.mx/noticias/noticia335.html"
+							target="_blank"
+							rel="noopener noreferrer"
+							class="hover:text-unam-blue-600 dark:hover:text-accent-cyan-400 transition-colors inline-flex items-center gap-2 group"
+						>
+							Reconocimiento SNII Emérito 2025
+							<svg class="w-5 h-5 opacity-50 group-hover:opacity-100 transition-opacity" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/>
+							</svg>
+						</a>
 					</h2>
 					<p class="text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
 						El Sistema Nacional de Investigadores (SNII) reconoció en 2025 al matemático Humberto Carrillo, profesor de la
@@ -218,6 +229,119 @@ const stats = [
 								</svg>
 							</a>
 						))}
+					</div>
+					</div>
+
+				<!-- Resumen del CV generado con IA -->
+				<div class="mt-10">
+					<div class="flex items-center gap-3 mb-6">
+						<h2 class="text-2xl font-display font-bold text-gray-900 dark:text-white">
+							Resumen del CV generado con IA
+						</h2>
+						<span class="inline-flex items-center gap-1 px-3 py-1 bg-accent-purple-100 dark:bg-accent-purple-900/40 text-accent-purple-700 dark:text-accent-purple-300 text-xs font-semibold rounded-full">
+							<svg class="w-3 h-3" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2a10 10 0 110 20A10 10 0 0112 2zm0 3a1 1 0 00-1 1v5.586L8.707 9.293a1 1 0 10-1.414 1.414l4 4a1 1 0 001.414 0l4-4a1 1 0 00-1.414-1.414L13 11.586V6a1 1 0 00-1-1z"/></svg>
+							Generado con IA
+						</span>
+					</div>
+
+					<div class="grid md:grid-cols-2 gap-6">
+
+						<!-- Formación y Educación -->
+						<div class="card p-6">
+							<div class="flex items-center gap-2 mb-4">
+								<div class="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-cyan-500 flex items-center justify-center flex-shrink-0">
+									<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"/></svg>
+								</div>
+								<h3 class="text-lg font-bold text-gray-900 dark:text-white">Formación y Educación</h3>
+							</div>
+							<ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+								<li class="flex gap-2">
+									<span class="font-semibold text-unam-blue-600 dark:text-accent-cyan-400 whitespace-nowrap">Grados Académicos</span>
+									<span>Licenciado (1975), Maestro (1981) y Doctor en Ciencias (Matemáticas) (1984) por la UNAM.</span>
+								</li>
+								<li class="flex gap-2">
+									<span class="font-semibold text-unam-blue-600 dark:text-accent-cyan-400 whitespace-nowrap">Postdoctorados</span>
+									<span>Universidad de Brown (1985–1986) y National Institutes of Health, NIH (1986–1987).</span>
+								</li>
+								<li class="flex gap-2">
+									<span class="font-semibold text-unam-blue-600 dark:text-accent-cyan-400 whitespace-nowrap">Certificación</span>
+									<span>Certificación técnica en Corrosión por NACE International (2004).</span>
+								</li>
+							</ul>
+						</div>
+
+						<!-- Investigación e Impacto Científico -->
+						<div class="card p-6">
+							<div class="flex items-center gap-2 mb-4">
+								<div class="w-8 h-8 rounded-lg bg-gradient-to-br from-purple-500 to-pink-500 flex items-center justify-center flex-shrink-0">
+									<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/></svg>
+								</div>
+								<h3 class="text-lg font-bold text-gray-900 dark:text-white">Investigación e Impacto Científico</h3>
+							</div>
+							<ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+								<li class="flex gap-2">
+									<span class="font-semibold text-unam-blue-600 dark:text-accent-cyan-400 whitespace-nowrap">Productividad</span>
+									<span>Al corte de abril de 2022, su obra acumulaba un total de <strong>2,517 citas</strong>.</span>
+								</li>
+								<li class="flex gap-2">
+									<span class="font-semibold text-unam-blue-600 dark:text-accent-cyan-400 whitespace-nowrap">Distribución</span>
+									<span>1,482 citas en artículos de investigación · 713 en patentes · 86 en tesis de grado.</span>
+								</li>
+								<li class="flex gap-2">
+									<span class="font-semibold text-unam-blue-600 dark:text-accent-cyan-400 whitespace-nowrap">Especialidades</span>
+									<span>Sistemas Dinámicos no Lineales, Biología Matemática, Inteligencia Computacional y Cienciometría.</span>
+								</li>
+							</ul>
+						</div>
+
+						<!-- Docencia y Formación -->
+						<div class="card p-6">
+							<div class="flex items-center gap-2 mb-4">
+								<div class="w-8 h-8 rounded-lg bg-gradient-to-br from-green-500 to-teal-500 flex items-center justify-center flex-shrink-0">
+									<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+								</div>
+								<h3 class="text-lg font-bold text-gray-900 dark:text-white">Docencia y Formación</h3>
+							</div>
+							<ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+								<li class="flex gap-2">
+									<span class="font-semibold text-unam-blue-600 dark:text-accent-cyan-400 whitespace-nowrap">Cátedra</span>
+									<span>Más de <strong>180 cursos semestrales</strong> en la UNAM cubriendo más de 20 materias distintas en licenciatura y posgrado.</span>
+								</li>
+								<li class="flex gap-2">
+									<span class="font-semibold text-unam-blue-600 dark:text-accent-cyan-400 whitespace-nowrap">Tesis Dirigidas</span>
+									<span>34 alumnos graduados: 7 de doctorado, 8 de maestría y 19 de licenciatura.</span>
+								</li>
+								<li class="flex gap-2">
+									<span class="font-semibold text-unam-blue-600 dark:text-accent-cyan-400 whitespace-nowrap">Mentoría</span>
+									<span>Asesor de más de 40 alumnos de servicio social en proyectos de software e investigación.</span>
+								</li>
+							</ul>
+						</div>
+
+						<!-- Innovación Tecnológica -->
+						<div class="card p-6">
+							<div class="flex items-center gap-2 mb-4">
+								<div class="w-8 h-8 rounded-lg bg-gradient-to-br from-orange-500 to-red-500 flex items-center justify-center flex-shrink-0">
+									<svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/></svg>
+								</div>
+								<h3 class="text-lg font-bold text-gray-900 dark:text-white">Innovación Tecnológica y Liderazgo</h3>
+							</div>
+							<ul class="space-y-3 text-sm text-gray-700 dark:text-gray-300">
+								<li class="flex gap-2">
+									<span class="font-semibold text-unam-blue-600 dark:text-accent-cyan-400 whitespace-nowrap">Software</span>
+									<span>Pionero en herramientas digitales para la enseñanza; <strong>2,731 descargas</strong> desde el sitio del laboratorio. Sistemas clave: INTEGRA, LabSOM, ViBlioSOM, ProDIn (2025).</span>
+								</li>
+								<li class="flex gap-2">
+									<span class="font-semibold text-unam-blue-600 dark:text-accent-cyan-400 whitespace-nowrap">Macroproyecto</span>
+									<span>Coordinó el Macroproyecto de Tecnologías para la Universidad de la Información (2005–2008): 49 académicos, 123 alumnos, 28 proyectos tecnológicos.</span>
+								</li>
+								<li class="flex gap-2">
+									<span class="font-semibold text-unam-blue-600 dark:text-accent-cyan-400 whitespace-nowrap">Vinculación</span>
+									<span>Proyectos de software para TELCEL, UNISYS y Banco Nacional de México. Coordinador de Ciencia de Datos del <a href="https://www.c3.unam.mx/" target="_blank" rel="noopener noreferrer" class="text-unam-blue-500 hover:underline">C3-UNAM</a> (desde 2022).</span>
+								</li>
+							</ul>
+						</div>
+
 					</div>
 				</div>
 
