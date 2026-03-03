@@ -4,13 +4,18 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), sitemap()],
+  integrations: [
+    tailwind(),
+    sitemap({
+      customPages: [],
+    }),
+  ],
 
   // Configuración para despliegue en raíz del dominio
   base: '/',
 
   // URL del sitio para SEO y sitemap
-  site: 'https://www.dynamics.unam.edu',
+  site: 'https://www.dynamics.unam.mx',
 
   // Optimizaciones de build
   build: {
