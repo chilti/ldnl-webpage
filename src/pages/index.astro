@@ -263,11 +263,25 @@ import LiteYouTube from '../components/LiteYouTube.astro';
 				</div>
 				
 				<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto">
+					<!-- Conferencia 0 (new) -->
+					<div 
+						class="card overflow-hidden group"
+						x-data
+						x-intersect="$el.classList.add('animate-in-up')"
+					>
+						<LiteYouTube 
+							videoId="C4sl_NNvEeI"
+							title="Conferencia - Laboratorio de Dinámica No Lineal"
+							showTitle={true}
+						/>
+					</div>
+
 					<!-- Conferencia 1 -->
 					<div 
 						class="card overflow-hidden group"
 						x-data
 						x-intersect="$el.classList.add('animate-in-up')"
+						style="animation-delay: 0.1s"
 					>
 						<LiteYouTube 
 							videoId="snw7gZIEl-w"
